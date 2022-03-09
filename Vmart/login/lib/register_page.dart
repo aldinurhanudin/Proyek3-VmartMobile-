@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'register_page.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
+class RegisterPage extends StatefulWidget {
+  static String tag = 'Registerpage';
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _RegisterPageState createState() => new _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   bool isHidden = true;
   TextEditingController emailC = TextEditingController();
   TextEditingController passC = TextEditingController();
@@ -64,6 +64,29 @@ class _LoginPageState extends State<LoginPage> {
           )),
     );
 
+    final UlangiPassword = TextFormField(
+      controller: passC,
+      autofocus: false,
+      // initialValue: 'terserah',
+      obscureText: isHidden,
+      textInputAction: TextInputAction.done,
+      decoration: InputDecoration(
+          hintText: 'UlangiPassword',
+          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          prefixIcon: Icon(Icons.vpn_key),
+          suffixIcon: IconButton(
+            onPressed: () {
+              if (isHidden == true) {
+                isHidden = false;
+              } else {
+                isHidden = true;
+              }
+              setState(() {});
+            },
+            icon: Icon(Icons.remove_red_eye),
+          )),
+    );
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
@@ -72,36 +95,37 @@ class _LoginPageState extends State<LoginPage> {
         ),
         onPressed: () {
           print("LOGIN DENGAN : EMAIL(${emailC.text}) & PASS(${passC.text})");
-          Navigator.of(context).pushNamed(HomePage.tag);
+          Navigator.of(context).pushNamed(LoginPage.tag);
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 10, 160, 22),
-        child: Text('Log In', style: TextStyle(color: Colors.white)),
+        child: Text('Sign Up',
+            style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
       ),
     );
 
-    final forgotLabel = FlatButton(
-      child: Text(
-        'Lupa password?',
-        style: TextStyle(color: Colors.black54),
-      ),
-      onPressed: () {
-        print('ok');
-      },
-    );
+    // final forgotLabel = FlatButton(
+    //   child: Text(
+    //     'Lupa password?',
+    //     style: TextStyle(color: Colors.black54),
+    //   ),
+    //   onPressed: () {
+    //     Navigator.of(context).pushNamed(LoginPage.tag);
+    //   },
+    // );
 
     final daftar = Center(
         child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Belum punya akun?'),
+        Text('Sudah punya akun?'),
         FlatButton(
           child: Text(
-            'Daftar Sekarang',
+            'Masuk Sekarang',
             style: TextStyle(color: Color.fromARGB(255, 10, 160, 22)),
           ),
           onPressed: () {
-            Navigator.of(context).pushNamed(RegisterPage.tag);
+            Navigator.of(context).pushNamed(LoginPage.tag);
           },
         ),
       ],
@@ -135,9 +159,11 @@ class _LoginPageState extends State<LoginPage> {
                 email,
                 SizedBox(height: 8.0),
                 password,
+                SizedBox(height: 8.0),
+                UlangiPassword,
                 SizedBox(height: 24.0),
                 loginButton,
-                forgotLabel,
+                // forgotLabel,
                 daftar
               ],
             ),

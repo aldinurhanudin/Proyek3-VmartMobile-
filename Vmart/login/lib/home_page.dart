@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
     final paragraf2 = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Saat ini, saya adalah freelance di salah satu instansi di Kabupaten Batang.',
+        'Saat ini, saya adalah mahasiswa di polindra',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
     final paragraf3 = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Pernah menempuh pendidikan di STMIK Widya Pratama Pekalongan mengambil program studi Teknik Informatika.',
+        'Pernah menempuh pendidikan di SMA 1 JASINGA mengambil jurusan IPA.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
