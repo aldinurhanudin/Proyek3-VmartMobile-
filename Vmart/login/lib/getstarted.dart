@@ -110,13 +110,19 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        color: Colors.green,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                ('assets/coverlogin.jpg'),
+              ),
+              fit: BoxFit.fill),
+        ),
         child: Center(
           child: Container(
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.white.withOpacity(0.7),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             // color: Colors.white,

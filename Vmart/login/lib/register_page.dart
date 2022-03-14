@@ -134,19 +134,13 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                ('assets/coverlogin.jpg'),
-              ),
-              fit: BoxFit.fill),
-        ),
+        color: Colors.green,
         child: Center(
           child: Container(
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             // color: Colors.white,
