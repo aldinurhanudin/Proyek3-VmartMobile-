@@ -24,9 +24,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Vmart"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("Vmart"),
+      // ),
       body: Container(
         child: Center(
           child: Column(
@@ -90,6 +90,10 @@ class _HomePageState extends State<HomePage> {
               Container(
                 padding: EdgeInsets.only(left: 8.0, right: 280.0),
                 child: Text('Categories'),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 280.0, right: 8.0),
+                child: Text('See all>'),
               ),
               Container(
                 decoration: BoxDecoration(

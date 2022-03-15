@@ -15,15 +15,15 @@ class _GetstartedPageState extends State<GetstartedPage> {
   @override
   Widget build(BuildContext context) {
     final loginButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: 100.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(18),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed(LoginPage.tag);
         },
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(20),
         color: Color.fromARGB(255, 10, 160, 22),
         child: Text('Get Started',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
