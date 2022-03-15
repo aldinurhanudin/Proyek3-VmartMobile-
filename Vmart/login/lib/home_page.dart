@@ -88,9 +88,8 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
               Container(
-                child: new Center(
-                  child: new Text("Categories"),
-                ),
+                padding: EdgeInsets.only(left: 8.0, right: 280.0),
+                child: Text('Categories'),
               ),
               Container(
                 decoration: BoxDecoration(
@@ -105,20 +104,75 @@ class _HomePageState extends State<HomePage> {
                         radius: 20,
                         backgroundImage: AssetImage('assets/wortel.png'),
                       ),
+                      Container(
+                        padding: EdgeInsets.only(left: 8.0, right: 280.0),
+                        child: Text('Vegetables'),
+                      ),
                       CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 20,
                         backgroundImage: AssetImage('assets/buah.png'),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 8.0, right: 10.0),
+                        child: Text('Fruits'),
                       ),
                       CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 20,
                         backgroundImage: AssetImage('assets/produk.png'),
                       ),
+                      Container(
+                        child: new Center(
+                          child: new Text("Semua Produk"),
+                        ),
+                      ),
                       CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 20,
                         backgroundImage: AssetImage('assets/kategori.png'),
+                      ),
+                      Container(
+                        child: new Center(
+                          child: new Text("Kategori"),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      CarouselSlider(
+                        options: CarouselOptions(
+                            autoPlay: true,
+                            autoPlayInterval: Duration(seconds: 3),
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 800),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            pauseAutoPlayOnTouch: true,
+                            enlargeCenterPage: true,
+                            viewportFraction: 0.8,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                _currentIndex = index;
+                              });
+                            }),
+                        items: cardList.map((item) {
+                          return ItemCard(title: item.toString());
+                        }).toList(),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: map<Widget>(cardList, (index, url) {
+                          return Container(
+                            width: _currentIndex == index ? 30 : 10.0,
+                            height: 10.0,
+                            margin: EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 2.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: _currentIndex == index
+                                  ? Colors.green
+                                  : Colors.green.withOpacity(0.3),
+                            ),
+                          );
+                        }),
                       ),
                     ]),
               ),
