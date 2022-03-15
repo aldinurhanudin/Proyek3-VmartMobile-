@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/register_page.dart';
+import 'Getstarted_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 import 'register_page.dart';
@@ -9,6 +10,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
+    GetstartedPage.tag: (context) => GetstartedPage(),
     Splash.tag: (context) => Splash(),
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),

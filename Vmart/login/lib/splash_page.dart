@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Getstarted_page.dart';
 import 'home_page.dart';
 // import 'splash_page.dart';
 import 'dart:async';
@@ -23,7 +24,7 @@ class _SplashState extends State<Splash> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
-          return LoginPage();
+          return GetstartedPage();
         }),
       );
     });

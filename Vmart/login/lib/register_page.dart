@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
             icon: Icon(Icons.remove_red_eye),
           )),
     );
-    final loginButton = Padding(
+    final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
@@ -156,7 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 8.0),
                 UlangiPassword,
                 SizedBox(height: 24.0),
-                loginButton,
+                registerButton,
                 // forgotLabel,
                 daftar
               ],
