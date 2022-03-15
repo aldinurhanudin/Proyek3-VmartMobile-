@@ -15,7 +15,6 @@ class _GetstartedPageState extends State<GetstartedPage> {
   @override
   Widget build(BuildContext context) {
     final loginButton = Padding(
-      
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(

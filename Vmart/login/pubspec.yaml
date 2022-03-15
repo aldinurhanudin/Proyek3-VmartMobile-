@@ -45,8 +45,12 @@ flutter:
   assets:
     - assets/Logo.png
     - assets/Logo.png
-    - assets/coverlogin.jpg
+    - assets/coverlogin.png
     - assets/GetStarted.png
+    - assets/wortel.png
+    - assets/buah.png
+    - assets/produk.png
+    - assets/kategori.png
   fonts:
     - family: Nunito
       fonts:

@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Auto Slider Demo"),
+        title: Text("Vmart"),
       ),
       body: Container(
         child: Center(
@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 20),
               Container(
                 // padding: EdgeInsets.all(10),
-                width: 159,
-                height: 30,
+                width: 350,
+                height: 50,
                 decoration: BoxDecoration(
                     color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -44,13 +44,14 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    SizedBox(width: 20),
                     Icon(Icons.search),
                     SizedBox(width: 10),
                     Text('search')
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 20),
               CarouselSlider(
                 options: CarouselOptions(
                     autoPlay: true,
@@ -80,11 +81,46 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       color: _currentIndex == index
-                          ? Colors.blue
-                          : Colors.blue.withOpacity(0.3),
+                          ? Colors.green
+                          : Colors.green.withOpacity(0.3),
                     ),
                   );
                 }),
+              ),
+              Container(
+                child: new Center(
+                  child: new Text("Categories"),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(width: 2, color: Colors.white),
+                    borderRadius: BorderRadius.circular(100)),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        backgroundImage: AssetImage('assets/wortel.png'),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        backgroundImage: AssetImage('assets/buah.png'),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        backgroundImage: AssetImage('assets/produk.png'),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        backgroundImage: AssetImage('assets/kategori.png'),
+                      ),
+                    ]),
               ),
             ],
           ),
@@ -112,7 +148,7 @@ class ItemCard extends StatelessWidget {
           BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
         ],
       ),
-      child: Center(child: Image.asset('assets/coverlogin.jpg')),
+      child: Center(child: Image.asset('assets/coverlogin.png')),
     );
   }
 }
