@@ -28,159 +28,188 @@ class _HomePageState extends State<HomePage> {
       //   title: Text("Vmart"),
       // ),
       body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(height: 20),
-              Container(
-                // padding: EdgeInsets.all(10),
-                width: 350,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 20),
-                    Icon(Icons.search),
-                    SizedBox(width: 10),
-                    Text('search')
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              CarouselSlider(
-                options: CarouselOptions(
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 3),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    pauseAutoPlayOnTouch: true,
-                    enlargeCenterPage: true,
-                    viewportFraction: 0.8,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        _currentIndex = index;
-                      });
-                    }),
-                items: cardList.map((item) {
-                  return ItemCard(title: item.toString());
-                }).toList(),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: map<Widget>(cardList, (index, url) {
-                  return Container(
-                    width: _currentIndex == index ? 30 : 10.0,
-                    height: 10.0,
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: _currentIndex == index
-                          ? Colors.green
-                          : Colors.green.withOpacity(0.3),
-                    ),
-                  );
-                }),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 8.0, right: 280.0),
-                child: Text('Categories'),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 280.0, right: 8.0),
-                child: Text('See all>'),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Colors.white),
-                    borderRadius: BorderRadius.circular(100)),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 20),
+                Container(
+                  // padding: EdgeInsets.all(10),
+                  width: 350,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 20,
-                        backgroundImage: AssetImage('assets/wortel.png'),
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(width: 20),
+                      Icon(Icons.search),
+                      SizedBox(width: 10),
+                      Text('search')
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                CarouselSlider(
+                  options: CarouselOptions(
+                      height: 125.0,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      pauseAutoPlayOnTouch: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 0.8,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      }),
+                  items: cardList.map((item) {
+                    return ItemCard(title: item.toString());
+                  }).toList(),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: map<Widget>(cardList, (index, url) {
+                    return Container(
+                      width: _currentIndex == index ? 30 : 10.0,
+                      height: 10.0,
+                      margin:
+                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: _currentIndex == index
+                            ? Colors.green
+                            : Colors.green.withOpacity(0.3),
                       ),
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0, right: 280.0),
-                        child: Text('Vegetables'),
+                    );
+                  }),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text("Kategori"), Text("lihat semua >")],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.white,
+                            backgroundImage: AssetImage('assets/wortel.png'),
+                          ),
+                          Text('Vegetables'),
+                        ],
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 20,
-                        backgroundImage: AssetImage('assets/buah.png'),
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.white,
+                            backgroundImage: AssetImage('assets/buah.png'),
+                          ),
+                          Text('Fruits'),
+                        ],
                       ),
-                      Container(
-                        padding: EdgeInsets.only(left: 8.0, right: 10.0),
-                        child: Text('Fruits'),
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.white,
+                            backgroundImage: AssetImage('assets/produk.png'),
+                          ),
+                          Text('Semua Produk'),
+                        ],
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 20,
-                        backgroundImage: AssetImage('assets/produk.png'),
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.white,
+                            backgroundImage: AssetImage('assets/kategori.png'),
+                          ),
+                          Text(
+                            'Produk',
+                            maxLines: 2,
+                          ),
+                        ],
                       ),
-                      Container(
-                        child: new Center(
-                          child: new Text("Semua Produk"),
-                        ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text("Spesial Hari ini"), Text("lihat semua >")],
+                  ),
+                ),
+                CarouselSlider(
+                  options: CarouselOptions(
+                      height: 125.0,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      pauseAutoPlayOnTouch: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 0.8,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      }),
+                  items: cardList.map((item) {
+                    return ItemCard(title: item.toString());
+                  }).toList(),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: map<Widget>(cardList, (index, url) {
+                    return Container(
+                      width: _currentIndex == index ? 30 : 10.0,
+                      height: 10.0,
+                      margin:
+                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: _currentIndex == index
+                            ? Colors.green
+                            : Colors.green.withOpacity(0.3),
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 20,
-                        backgroundImage: AssetImage('assets/kategori.png'),
-                      ),
-                      Container(
-                        child: new Center(
-                          child: new Text("Kategori"),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      CarouselSlider(
-                        options: CarouselOptions(
-                            autoPlay: true,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            pauseAutoPlayOnTouch: true,
-                            enlargeCenterPage: true,
-                            viewportFraction: 0.8,
-                            onPageChanged: (index, reason) {
-                              setState(() {
-                                _currentIndex = index;
-                              });
-                            }),
-                        items: cardList.map((item) {
-                          return ItemCard(title: item.toString());
-                        }).toList(),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: map<Widget>(cardList, (index, url) {
-                          return Container(
-                            width: _currentIndex == index ? 30 : 10.0,
-                            height: 10.0,
-                            margin: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 2.0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: _currentIndex == index
-                                  ? Colors.green
-                                  : Colors.green.withOpacity(0.3),
-                            ),
-                          );
-                        }),
-                      ),
-                    ]),
-              ),
-            ],
+                    );
+                  }),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text("Produk Terlaris"), Text("lihat semua >")],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -197,7 +226,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.8,
-      height: MediaQuery.of(context).size.height * 0.6,
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color:
@@ -206,7 +235,11 @@ class ItemCard extends StatelessWidget {
           BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 2),
         ],
       ),
-      child: Center(child: Image.asset('assets/coverlogin.png')),
+      child: Center(
+          child: Image.asset(
+        'assets/coverlogin.png',
+        fit: BoxFit.cover,
+      )),
     );
   }
 }

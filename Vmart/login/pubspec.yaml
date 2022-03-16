@@ -51,6 +51,8 @@ flutter:
     - assets/buah.png
     - assets/produk.png
     - assets/kategori.png
+    - assets/slider1.png
+    - assets/slider2.png
   fonts:
     - family: Nunito
       fonts:
