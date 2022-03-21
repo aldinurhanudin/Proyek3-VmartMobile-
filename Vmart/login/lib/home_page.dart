@@ -13,6 +13,8 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   List<int> cardList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  get mainColor => null;
+
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -208,9 +210,75 @@ class _HomePageState extends State<HomePage> {
                     children: [Text("Produk Terlaris"), Text("lihat semua >")],
                   ),
                 ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 4,
+                  color: Colors.white,
+                  child: ListView(scrollDirection: Axis.horizontal, children: [
+                    buildCard(context),
+                    buildCard(context),
+                    buildCard(context),
+                    buildCard(context),
+                  ]),
+                )
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildCard(BuildContext context) {
+    return Card(
+      // shape: CircleBorder(side: BorderSide()),
+      elevation: 3,
+      child: Container(
+        height: 190,
+        width: 195,
+        color: mainColor,
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width / 2.5,
+              height: MediaQuery.of(context).size.width / 4.5,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    "assets/selada.png",
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: Text(
+                "Selada",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.all(4),
+                padding: EdgeInsets.only(left: 0.5, right: 65),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [Text("Rp.6000"), Text("/gram")],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -243,71 +311,3 @@ class ItemCard extends StatelessWidget {
     );
   }
 }
-// class HomePage extends StatelessWidget {
-//   static String tag = 'home-page';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final profil = Hero(
-//       tag: 'hero',
-//       child: Padding(
-//         padding: EdgeInsets.all(16.0),
-//         child: CircleAvatar(
-//           radius: 72.0,
-//           backgroundColor: Colors.transparent,
-//           backgroundImage: AssetImage('assets/Logo.png'),
-//         ),
-//       ),
-//     );
-
-//     final welcome = Padding(
-//       padding: EdgeInsets.all(8.0),
-//       child: Text(
-//         'Selamat datang',
-//         style: TextStyle(fontSize: 28.0, color: Colors.white),
-//       ),
-//     );
-
-//     final paragraf1 = Padding(
-//       padding: EdgeInsets.all(8.0),
-//       child: Text(
-//         'Halo, nama saya aldi yang sedang membuat tampilan mobile Vmart',
-//         style: TextStyle(fontSize: 16.0, color: Colors.white),
-//       ),
-//     );
-    
-//     final paragraf2 = Padding(
-//       padding: EdgeInsets.all(8.0),
-//       child: Text(
-//         'Saat ini, saya adalah mahasiswa di polindra',
-//         style: TextStyle(fontSize: 16.0, color: Colors.white),
-//       ),
-//     );
-
-//     final paragraf3 = Padding(
-//       padding: EdgeInsets.all(8.0),
-//       child: Text(
-//         'Pernah menempuh pendidikan di SMA 1 JASINGA mengambil jurusan IPA.',
-//         style: TextStyle(fontSize: 16.0, color: Colors.white),
-//       ),
-//     );
-
-//     final body = Container(
-//       width: MediaQuery.of(context).size.width,
-//       padding: EdgeInsets.all(28.0),
-//       decoration: BoxDecoration(
-//         gradient: LinearGradient(colors: [
-//           Colors.blue,
-//           Colors.lightBlueAccent,
-//         ]),
-//       ),
-//       child: Column(
-//         children: <Widget>[profil, welcome, paragraf1,paragraf2,paragraf3],
-//       ),
-//     );
-
-//     return Scaffold(
-//       body: body,
-//     );
-//   }
-// }

@@ -53,6 +53,7 @@ flutter:
     - assets/kategori.png
     - assets/slider1.png
     - assets/slider2.png
+    - assets/selada.png
   fonts:
     - family: Nunito
       fonts:
