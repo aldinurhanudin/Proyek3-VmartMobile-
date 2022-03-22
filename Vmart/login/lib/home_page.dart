@@ -220,7 +220,54 @@ class _HomePageState extends State<HomePage> {
                     buildCard(context),
                     buildCard(context),
                   ]),
-                )
+                ),
+                Container(
+                  color: Colors.white,
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Kumpulan Rekomendasi Untukmu"),
+                      // Text("lihat semua >")
+                    ],
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Ada Rekomendasi yang Bikin Happy"),
+                      // Text("lihat semua >")
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 20),
+                  child: Image.asset(
+                    "assets/bannervmart.png",
+                    alignment: Alignment.center,
+                    width: 700.0,
+                    height: 250.0,
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.all(0.10),
+                  padding: EdgeInsets.only(left: 20, right: 29),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text("Spesial Hari ini"), Text("lihat semua >")],
+                  ),
+                ),
               ],
             ),
           ),
