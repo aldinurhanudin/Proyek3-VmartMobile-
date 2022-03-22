@@ -268,6 +268,17 @@ class _HomePageState extends State<HomePage> {
                     children: [Text("Spesial Hari ini"), Text("lihat semua >")],
                   ),
                 ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 4,
+                  color: Colors.white,
+                  child: ListView(scrollDirection: Axis.horizontal, children: [
+                    buildCard(context),
+                    buildCard(context),
+                    buildCard(context),
+                    buildCard(context),
+                  ]),
+                ),
               ],
             ),
           ),
