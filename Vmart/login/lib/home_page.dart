@@ -25,10 +25,61 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final heighBody = MediaQuery.of(context).size.height;
+    final widthBody = MediaQuery.of(context).size.width;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Vmart"),
-      // ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border(top: BorderSide(color: Colors.grey, width: 2))),
+        width: widthBody,
+        height: 70,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                children: [
+                  Icon(
+                    Icons.home,
+                    color: Colors.grey,
+                  ),
+                  Text("Home")
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.grey,
+                  ),
+                  Text("Favorite")
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.shopping_cart,
+                    color: Colors.grey,
+                  ),
+                  Text("Cart")
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.account_circle_sharp,
+                    color: Colors.grey,
+                  ),
+                  Text("Profile")
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Center(
