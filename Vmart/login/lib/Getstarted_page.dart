@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/profile_page.dart';
 import 'home_page.dart';
 // import 'splash_page.dart';
 import 'dart:async';
@@ -21,7 +22,7 @@ class _GetstartedPageState extends State<GetstartedPage> {
           borderRadius: BorderRadius.circular(18),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(LoginPage.tag);
+          Navigator.of(context).pushNamed(ProfilePage.tag);
         },
         padding: EdgeInsets.all(20),
         color: Color.fromARGB(255, 10, 160, 22),
