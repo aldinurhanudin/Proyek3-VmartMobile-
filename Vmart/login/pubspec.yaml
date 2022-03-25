@@ -46,7 +46,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/Logo.png
-    - assets/Logo.png
     - assets/coverlogin.png
     - assets/GetStarted.png
     - assets/wortel.png

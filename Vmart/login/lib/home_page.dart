@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import 'register_page.dart';
+
 class HomePage extends StatefulWidget {
   static String tag = 'Homepage';
   @override
@@ -27,6 +29,26 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final heighBody = MediaQuery.of(context).size.height;
     final widthBody = MediaQuery.of(context).size.width;
+
+    final daftar = Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.home,
+          color: Colors.grey,
+        ),
+        FlatButton(
+          child: Text(
+            'Home',
+            style: TextStyle(color: Color.fromARGB(255, 10, 160, 22)),
+          ),
+          onPressed: () {
+            Navigator.of(context).pushNamed(RegisterPage.tag);
+          },
+        ),
+      ],
+    ));
     return Scaffold(
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -73,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                     Icons.account_circle_sharp,
                     color: Colors.grey,
                   ),
-                  Text("Profile")
+                  Text("Profile"),
                 ],
               ),
             ],
@@ -86,7 +108,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 20),
+                SizedBox(height: 30),
                 Container(
                   // padding: EdgeInsets.all(10),
                   width: 350,
@@ -311,8 +333,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(0.10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 30, right: 29),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
