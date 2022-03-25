@@ -25,7 +25,7 @@ class _SplashState extends State<Splash> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
-          return DetailprodukPage();
+          return GetstartedPage();
         }),
       );
     });
