@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
+import 'login_page.dart';
 
 class ProfilePage extends StatefulWidget {
   static String tag = 'Profilepage';
@@ -117,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Produk Terlaris",
+                        Text("Produk Terbaru",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                         Text(" >",
@@ -131,7 +132,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: Color.fromARGB(255, 161, 160, 160),
                   ),
                   Container(
+                    // width: MediaQuery.of(context).size.width / 2.5,
+                    // height: MediaQuery.of(context).size.width / 4.5,
                     padding: EdgeInsets.symmetric(vertical: 100.0),
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -140,14 +144,19 @@ class _ProfilePageState extends State<ProfilePage> {
                         //   color: Colors.green,
                         //   child: Text('LOG OUT'),
                         // ),
+
                         ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed(HomePage.tag);
+                              Navigator.of(context).pushNamed(LoginPage.tag);
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.green,
+                              padding: EdgeInsets.only(
+                                  left: 60, right: 60, top: 10, bottom: 12),
                             ),
-                            child: Text('LOG OUT')),
+                            child: Text(
+                              'LOG OUT',
+                            )),
                       ],
                     ),
                   ),
