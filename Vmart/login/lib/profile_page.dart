@@ -76,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Spesial Hari ini",
+                        Text("Pesanan saya",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                         Text(" >",
@@ -97,7 +97,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Produk Terlaris",
+                        Text("Pengaturan akun",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                         Text(" >",
@@ -118,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Produk Terbaru",
+                        Text("Alamat saya",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                         Text(" >",
@@ -131,6 +131,28 @@ class _ProfilePageState extends State<ProfilePage> {
                     // height: 2,
                     color: Color.fromARGB(255, 161, 160, 160),
                   ),
+                   Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29, top: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("Bantuan",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
+                        Text(" >",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    // height: 2,
+                    color: Color.fromARGB(255, 161, 160, 160),
+                  ),
+                  
                   Container(
                     // width: MediaQuery.of(context).size.width / 2.5,
                     // height: MediaQuery.of(context).size.width / 4.5,
