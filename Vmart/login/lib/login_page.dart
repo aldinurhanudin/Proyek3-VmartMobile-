@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'menu.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -72,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         onPressed: () {
           print("LOGIN DENGAN : EMAIL(${emailC.text}) & PASS(${passC.text})");
-          Navigator.of(context).pushNamed(HomePage.tag);
+          Navigator.of(context).pushNamed(Menu.tag);
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 10, 160, 22),

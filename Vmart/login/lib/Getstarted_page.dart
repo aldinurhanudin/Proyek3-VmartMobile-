@@ -22,7 +22,7 @@ class _GetstartedPageState extends State<GetstartedPage> {
           borderRadius: BorderRadius.circular(18),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(ProfilePage.tag);
+          Navigator.of(context).pushNamed(LoginPage.tag);
         },
         padding: EdgeInsets.all(20),
         color: Color.fromARGB(255, 10, 160, 22),

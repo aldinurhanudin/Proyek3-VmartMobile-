@@ -50,58 +50,58 @@ class _HomePageState extends State<HomePage> {
       ],
     ));
     return Scaffold(
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(top: BorderSide(color: Colors.grey, width: 2))),
-        width: widthBody,
-        height: 70,
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  Icon(
-                    Icons.home,
-                    color: Colors.grey,
-                  ),
-                  Text("Home")
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.star,
-                    color: Colors.grey,
-                  ),
-                  Text("Favorite")
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.shopping_cart,
-                    color: Colors.grey,
-                  ),
-                  Text("Cart")
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.account_circle_sharp,
-                    color: Colors.grey,
-                  ),
-                  Text("Profile"),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   decoration: BoxDecoration(
+      //       color: Colors.white,
+      //       border: Border(top: BorderSide(color: Colors.grey, width: 2))),
+      //   width: widthBody,
+      //   height: 70,
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(8),
+      //     child: Row(
+      //       crossAxisAlignment: CrossAxisAlignment.center,
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //       children: [
+      //         Column(
+      //           children: [
+      //             Icon(
+      //               Icons.home,
+      //               color: Colors.grey,
+      //             ),
+      //             Text("Home")
+      //           ],
+      //         ),
+      //         Column(
+      //           children: [
+      //             Icon(
+      //               Icons.star,
+      //               color: Colors.grey,
+      //             ),
+      //             Text("Favorite")
+      //           ],
+      //         ),
+      //         Column(
+      //           children: [
+      //             Icon(
+      //               Icons.shopping_cart,
+      //               color: Colors.grey,
+      //             ),
+      //             Text("Cart")
+      //           ],
+      //         ),
+      //         Column(
+      //           children: [
+      //             Icon(
+      //               Icons.account_circle_sharp,
+      //               color: Colors.grey,
+      //             ),
+      //             Text("Profile"),
+      //           ],
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       body: Container(
         child: SingleChildScrollView(
           child: Center(
@@ -171,7 +171,22 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [Text("Kategori"), Text("lihat semua >")],
+                    children: [
+                      Text(
+                        "Kategori",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        "lihat semua >",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 18,
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 Container(
@@ -234,7 +249,22 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [Text("Spesial Hari ini"), Text("lihat semua >")],
+                    children: [
+                      Text(
+                        "Spesial Hari ini",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        "lihat semua >",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 CarouselSlider(
@@ -280,7 +310,22 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [Text("Produk Terlaris"), Text("lihat semua >")],
+                    children: [
+                      Text(
+                        "Produk Terlaris",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        "lihat semua >",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
@@ -303,7 +348,13 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Kumpulan Rekomendasi Untukmu"),
+                      Text(
+                        "Kumpulan Rekomendasi Untukmu",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
                       // Text("lihat semua >")
                     ],
                   ),
@@ -338,7 +389,22 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [Text("Spesial Hari ini"), Text("lihat semua >")],
+                    children: [
+                      Text(
+                        "Spesial Hari ini",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        "lihat semua >",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 18,
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 Container(

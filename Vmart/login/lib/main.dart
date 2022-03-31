@@ -3,6 +3,7 @@ import 'package:login/register_page.dart';
 import 'Getstarted_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
+import 'menu.dart';
 import 'register_page.dart';
 import 'splash_page.dart';
 import 'profile_page.dart';
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
+    RegisterPage.tag: (context) => RegisterPage(),
+    Menu.tag: (context) => Menu(),
   };
 
   @override
