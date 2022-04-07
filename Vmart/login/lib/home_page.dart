@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
       //     ),
       //   ),
       // ),
+
       body: Container(
         child: SingleChildScrollView(
           child: Center(
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                   width: 350,
                   height: 50,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Color.fromARGB(255, 222, 229, 233),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

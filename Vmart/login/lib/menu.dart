@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login/home_page.dart';
 import 'package:login/profile_page.dart';
 
+import 'cart_page.dart';
+
 class Menu extends StatefulWidget {
   static String tag = 'Menu';
 
@@ -31,7 +33,7 @@ class _Menu extends State<Menu> {
   final Screens = [
     HomePage(),
     ProfilePage(),
-    ProfilePage(),
+    CartPage(),
     ProfilePage(),
   ];
 
