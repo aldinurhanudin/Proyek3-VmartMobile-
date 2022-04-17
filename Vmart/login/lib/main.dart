@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login/product_detail.dart';
 import 'package:login/register_page.dart';
 import 'Getstarted_page.dart';
+import 'allproduct_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 import 'menu.dart';
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
-    RegisterPage.tag: (context) => RegisterPage(),
+    AllproductPage.tag: (context) => AllproductPage(),
+    ProductDetail.tag: (context) => ProductDetail(product: {},),
     Menu.tag: (context) => Menu(),
   };
 

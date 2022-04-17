@@ -39,49 +39,13 @@ class _CartPageState extends State<CartPage> {
                       children: [
                         Row(
                           children: [
-                            const CircleAvatar(
-                              radius: 27,
-                              // backgroundColor: Colors.white,
-                              backgroundImage: AssetImage(
-                                'assets/selada.png',
-                              ),
-                            ),
-                            SizedBox(width: 25),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  'Selada',
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('200 gram'),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: const EdgeInsets.all(10),
-                    padding: const EdgeInsets.only(
-                      left: 25,
-                      right: 29,
-                      top: 69.82,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const CircleAvatar(
-                              radius: 27,
-                              // backgroundColor: Colors.white,
-                              backgroundImage: AssetImage(
-                                'assets/selada.png',
+                            Container(
+                              height: 70,
+                              width: 70,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/selada.png'),
+                                    fit: BoxFit.cover),
                               ),
                             ),
                             SizedBox(width: 25),
@@ -108,87 +72,105 @@ class _CartPageState extends State<CartPage> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29, top: 30),
-                    child: Row(
+                    margin: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.only(
+                      left: 25,
+                      right: 29,
+                      top: 69.82,
+                    ),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Pesanan saya",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text(" >",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold))
+                        Row(
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/selada.png'),
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                            SizedBox(width: 25),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Selada',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text('200 gram'),
+                              ],
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ),
                   Divider(
                     height: 10,
-                    color: Color.fromARGB(255, 161, 160, 160),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29, top: 30),
-                    child: Row(
+                    margin: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.only(
+                      left: 25,
+                      right: 29,
+                      top: 69.82,
+                    ),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Pengaturan akun",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text(" >",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold))
+                        Row(
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/selada.png'),
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                            SizedBox(width: 25),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Selada',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text('200 gram'),
+                              ],
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ),
-                  Divider(
-                    // height: 2,
-                    color: Color.fromARGB(255, 161, 160, 160),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29, top: 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text("Alamat saya",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text(" >",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold))
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage('assets/tambah.png'),
+                      ),
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage('assets/tambah.png'),
+                      ),
+                    ],
                   ),
                   Divider(
-                    // height: 2,
-                    color: Color.fromARGB(255, 161, 160, 160),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29, top: 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text("Bantuan",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text(" >",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold))
-                      ],
-                    ),
-                  ),
-                  Divider(
-                    // height: 2,
-                    color: Color.fromARGB(255, 161, 160, 160),
+                    height: 10,
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   Container(
                     // width: MediaQuery.of(context).size.width / 2.5,

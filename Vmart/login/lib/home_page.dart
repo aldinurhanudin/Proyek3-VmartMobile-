@@ -1,8 +1,8 @@
+import 'dart:convert';
 import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
+import 'allproduct_page.dart';
 import 'register_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -50,59 +50,6 @@ class _HomePageState extends State<HomePage> {
       ],
     ));
     return Scaffold(
-      // bottomNavigationBar: Container(
-      //   decoration: BoxDecoration(
-      //       color: Colors.white,
-      //       border: Border(top: BorderSide(color: Colors.grey, width: 2))),
-      //   width: widthBody,
-      //   height: 70,
-      //   child: Padding(
-      //     padding: const EdgeInsets.all(8),
-      //     child: Row(
-      //       crossAxisAlignment: CrossAxisAlignment.center,
-      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //       children: [
-      //         Column(
-      //           children: [
-      //             Icon(
-      //               Icons.home,
-      //               color: Colors.grey,
-      //             ),
-      //             Text("Home")
-      //           ],
-      //         ),
-      //         Column(
-      //           children: [
-      //             Icon(
-      //               Icons.star,
-      //               color: Colors.grey,
-      //             ),
-      //             Text("Favorite")
-      //           ],
-      //         ),
-      //         Column(
-      //           children: [
-      //             Icon(
-      //               Icons.shopping_cart,
-      //               color: Colors.grey,
-      //             ),
-      //             Text("Cart")
-      //           ],
-      //         ),
-      //         Column(
-      //           children: [
-      //             Icon(
-      //               Icons.account_circle_sharp,
-      //               color: Colors.grey,
-      //             ),
-      //             Text("Profile"),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-
       body: Container(
         child: SingleChildScrollView(
           child: Center(
@@ -313,20 +260,39 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Produk Terlaris",
+                        'Produk Terlaris',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                       ),
-                      Text(
-                        "lihat semua >",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 18,
+                      FlatButton(
+                        child: Text(
+                          'Lihat Semua>',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 10, 160, 22)),
                         ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AllproductPage.tag);
+                        },
                       ),
                     ],
+                    // children: [
+                    //   Text(
+                    //     "Produk Terlaris",
+                    //     style: TextStyle(
+                    //       fontWeight: FontWeight.bold,
+                    //       fontSize: 18,
+                    //     ),
+                    //   ),
+                    //   Text(
+                    //     "lihat semua >",
+                    //     style: TextStyle(
+                    //       color: Colors.green,
+                    //       fontSize: 18,
+                    //     ),
+                    //   ),
+                    // ],
                   ),
                 ),
                 Container(
@@ -392,19 +358,22 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Spesial Hari ini",
+                        'Spesial hari ini',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                       ),
-                      Text(
-                        "lihat semua >",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 18,
+                      FlatButton(
+                        child: Text(
+                          'Lihat Semua>',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 10, 160, 22)),
                         ),
-                      )
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AllproductPage.tag);
+                        },
+                      ),
                     ],
                   ),
                 ),
