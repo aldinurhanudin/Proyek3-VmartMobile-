@@ -29,6 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sqflite: ^2.0.2+1
+  path_provider: ^2.0.9
   flutter_localizations:
     sdk: flutter
 
@@ -42,6 +44,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 flutter:
   uses-material-design: true
