@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:login/widgets/card_sayur.dart';
+import 'package:login/widgets/custom_app_bar.dart';
 import 'allproduct_page.dart';
 import 'register_page.dart';
 import 'package:http/http.dart' as http;
@@ -58,6 +59,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     ));
+    // return Scaffold();
+    // var customAppBar = CustomAppBar();
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
@@ -65,24 +68,18 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 30),
-                Container(
-                  // padding: EdgeInsets.all(10),
-                  width: 350,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 222, 229, 233),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(width: 20),
-                      Icon(Icons.search),
-                      SizedBox(width: 10),
-                      Text('search')
-                    ],
-                  ),
+                // Container(
+                //   child: ListView(
+                //     children: [
+                //       Container(
+                //         color: Colors.blue,
+                //         child: Text("test"),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                SafeArea(
+                  child: CustomAppBar(),
                 ),
                 SizedBox(height: 20),
                 CarouselSlider(
@@ -286,22 +283,6 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ],
-                    // children: [
-                    //   Text(
-                    //     "Produk Terlaris",
-                    //     style: TextStyle(
-                    //       fontWeight: FontWeight.bold,
-                    //       fontSize: 18,
-                    //     ),
-                    //   ),
-                    //   Text(
-                    //     "lihat semua >",
-                    //     style: TextStyle(
-                    //       color: Colors.green,
-                    //       fontSize: 18,
-                    //     ),
-                    //   ),
-                    // ],
                   ),
                 ),
                 Container(
