@@ -2,8 +2,10 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:login/widgets/card_sayur.dart';
 import 'allproduct_page.dart';
 import 'register_page.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   static String tag = 'Homepage';
@@ -12,6 +14,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final String url = "http://10.0.2.2:8000/api/produk";
+  Future getProducts() async {
+    var response = await http.get(Uri.parse(url));
+    print(json.decode(response.body));
+    return json.decode(response.body);
+  }
+
   int _currentIndex = 0;
   List<int> cardList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -378,16 +387,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.white,
-                  child: ListView(scrollDirection: Axis.horizontal, children: [
-                    buildCard(context),
-                    buildCard(context),
-                    buildCard(context),
-                    buildCard(context),
-                  ]),
-                ),
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 4,
+                    color: Colors.white,
+                    child: FutureBuilder(
+                      future: getProducts(),
+                      builder: (context, AsyncSnapshot snapshot) {
+                        return ListView.builder(
+                          itemBuilder: (context, index) {
+                            return CardSayur();
+                          },
+                        );
+                      },
+                    )),
               ],
             ),
           ),

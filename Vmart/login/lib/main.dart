@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
     AllproductPage.tag: (context) => AllproductPage(),
-    ProductDetail.tag: (context) => ProductDetail(product: {},),
+    ProductDetail.tag: (context) => ProductDetail(
+          product: {},
+        ),
     Menu.tag: (context) => Menu(),
   };
 

@@ -58,10 +58,12 @@ class _AllproductPageState extends State<AllproductPage> {
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
+                    scrollDirection: Axis.vertical,
                     itemCount: snapshot.data['data'].length,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 150,
+                        width: MediaQuery.of(context).size.width / 8,
+                        height: MediaQuery.of(context).size.width / 2.5,
                         child: Card(
                           elevation: 5,
                           child: Row(
@@ -133,9 +135,22 @@ class _AllproductPageState extends State<AllproductPage> {
                                                       Icons.shopping_cart)),
                                               GestureDetector(
                                                   onTap: () {
-                                                    CartPage();
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CartPage()));
                                                   },
                                                   child: Icon(Icons.share)),
+                                              GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CartPage()));
+                                                  },
+                                                  child: Icon(Icons.favorite)),
                                             ],
                                           ),
                                           Text(snapshot.data['data'][index]
