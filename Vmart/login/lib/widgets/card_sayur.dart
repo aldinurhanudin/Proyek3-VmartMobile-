@@ -15,7 +15,7 @@ class CardSayur extends StatelessWidget {
       child: Container(
         height: 190,
         width: 195,
-        color: Colors.amber,
+        color: Colors.green,
         child: Column(
           children: [
             Container(
@@ -45,13 +45,17 @@ class CardSayur extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15),
               child: Container(
-                width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.all(4),
-                padding: EdgeInsets.only(left: 0.5, right: 65),
+                // color: Colors.black,
+                // padding: EdgeInsets.only(left: 0.5, right: 65),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [Text(harga.toString()), Text("/gram")],
+                  children: [
+                    Text("Rp. ${harga.toString()}"),
+                    SizedBox(width: 20),
+                    Text("/gram")
+                  ],
                 ),
               ),
             ),

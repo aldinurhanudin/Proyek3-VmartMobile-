@@ -1,7 +1,9 @@
 import 'dart:convert';
+
 import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:login/product_detail.dart';
 import 'package:login/widgets/card_sayur.dart';
 import 'package:login/widgets/custom_app_bar.dart';
 import 'allproduct_page.dart';
@@ -62,326 +64,375 @@ class _HomePageState extends State<HomePage> {
     // return Scaffold();
     // var customAppBar = CustomAppBar();
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                // Container(
-                //   child: ListView(
-                //     children: [
-                //       Container(
-                //         color: Colors.blue,
-                //         child: Text("test"),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                SafeArea(
-                  child: CustomAppBar(),
-                ),
-                SizedBox(height: 20),
-                CarouselSlider(
-                  options: CarouselOptions(
-                      height: 125.0,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 3),
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      pauseAutoPlayOnTouch: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 0.8,
-                      onPageChanged: (index, reason) {
-                        setState(() {
-                          _currentIndex = index;
-                        });
-                      }),
-                  items: cardList.map((item) {
-                    return ItemCard(title: item.toString());
-                  }).toList(),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: map<Widget>(cardList, (index, url) {
-                    return Container(
-                      width: _currentIndex == index ? 30 : 10.0,
-                      height: 10.0,
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: _currentIndex == index
-                            ? Colors.green
-                            : Colors.green.withOpacity(0.3),
-                      ),
-                    );
-                  }),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Kategori",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        "lihat semua >",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 18,
-                        ),
-                      )
-                    ],
+      body: SafeArea(
+        child: Container(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    color: Color.fromARGB(255, 213, 231, 233),
+                    child: CustomAppBar(),
                   ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/wortel.png'),
-                          ),
-                          Text('Vegetables'),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/buah.png'),
-                          ),
-                          Text('Fruits'),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/produk.png'),
-                          ),
-                          Text('Semua Produk'),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/kategori.png'),
-                          ),
-                          Text(
-                            'Produk',
-                            maxLines: 2,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Spesial Hari ini",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                  // SizedBox(height: 20),
+                  Container(
+                      height: 50.0,
+                      // color: Colors.green,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(children: [
+                        Icon(
+                          Icons.location_on_outlined,
+                          size: 18,
                         ),
-                      ),
-                      Text(
-                        "lihat semua >",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                CarouselSlider(
-                  options: CarouselOptions(
-                      height: 125.0,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 3),
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      pauseAutoPlayOnTouch: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 0.8,
-                      onPageChanged: (index, reason) {
-                        setState(() {
-                          _currentIndex = index;
-                        });
-                      }),
-                  items: cardList.map((item) {
-                    return ItemCard(title: item.toString());
-                  }).toList(),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: map<Widget>(cardList, (index, url) {
-                    return Container(
-                      width: _currentIndex == index ? 30 : 10.0,
-                      height: 10.0,
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: _currentIndex == index
-                            ? Colors.green
-                            : Colors.green.withOpacity(0.3),
-                      ),
-                    );
-                  }),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Produk Terlaris',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      FlatButton(
-                        child: Text(
-                          'Lihat Semua>',
+                        Text(
+                          "Dikirim ke",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 10, 160, 22)),
+                            fontSize: 12,
+                          ),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(AllproductPage.tag);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.white,
-                  child: ListView(scrollDirection: Axis.horizontal, children: [
-                    buildCard(context),
-                    buildCard(context),
-                    buildCard(context),
-                    buildCard(context),
-                  ]),
-                ),
-                Container(
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Kumpulan Rekomendasi Untukmu",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      // Text("lihat semua >")
-                    ],
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 20, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text("Ada Rekomendasi yang Bikin Happy"),
-                      // Text("lihat semua >")
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20),
-                  child: Image.asset(
-                    "assets/bannervmart.png",
-                    alignment: Alignment.center,
-                    width: 700.0,
-                    height: 250.0,
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.only(left: 30, right: 29),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Spesial hari ini',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      FlatButton(
-                        child: Text(
-                          'Lihat Semua>',
+                        Text(
+                          "Jakarta Pusat",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 10, 160, 22)),
+                              fontSize: 12, fontWeight: FontWeight.w700),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(AllproductPage.tag);
-                        },
-                      ),
-                    ],
+                        Icon(Icons.keyboard_arrow_down_rounded, size: 15),
+                      ])),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Icon(Icons.book));
+                      },
+                    ),
                   ),
-                ),
-                Container(
+                  CarouselSlider(
+                    options: CarouselOptions(
+                        height: 125.0,
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        pauseAutoPlayOnTouch: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _currentIndex = index;
+                          });
+                        }),
+                    items: cardList.map((item) {
+                      return ItemCard(title: item.toString());
+                    }).toList(),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: map<Widget>(cardList, (index, url) {
+                      return Container(
+                        width: _currentIndex == index ? 30 : 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 2.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: _currentIndex == index
+                              ? Colors.green
+                              : Colors.green.withOpacity(0.3),
+                        ),
+                      );
+                    }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Kategori",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          "lihat semua >",
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 18,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundColor: Colors.white,
+                              backgroundImage: AssetImage('assets/wortel.png'),
+                            ),
+                            Text('Vegetables'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundColor: Colors.white,
+                              backgroundImage: AssetImage('assets/buah.png'),
+                            ),
+                            Text('Fruits'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundColor: Colors.white,
+                              backgroundImage: AssetImage('assets/produk.png'),
+                            ),
+                            Text('Semua Produk'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundColor: Colors.white,
+                              backgroundImage:
+                                  AssetImage('assets/kategori.png'),
+                            ),
+                            Text(
+                              'Produk',
+                              maxLines: 2,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Spesial Hari ini",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          "lihat semua >",
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  CarouselSlider(
+                    options: CarouselOptions(
+                        height: 125.0,
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        pauseAutoPlayOnTouch: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _currentIndex = index;
+                          });
+                        }),
+                    items: cardList.map((item) {
+                      return ItemCard(title: item.toString());
+                    }).toList(),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: map<Widget>(cardList, (index, url) {
+                      return Container(
+                        width: _currentIndex == index ? 30 : 10.0,
+                        height: 10.0,
+                        margin: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 2.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: _currentIndex == index
+                              ? Colors.green
+                              : Colors.green.withOpacity(0.3),
+                        ),
+                      );
+                    }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Produk Terlaris',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        FlatButton(
+                          child: Text(
+                            'Lihat Semua>',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 10, 160, 22)),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(AllproductPage.tag);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 4,
                     color: Colors.white,
-                    child: FutureBuilder(
-                      future: getProducts(),
-                      builder: (context, AsyncSnapshot snapshot) {
-                        return ListView.builder(
-                          itemBuilder: (context, index) {
-                            return CardSayur();
+                    child:
+                        ListView(scrollDirection: Axis.horizontal, children: [
+                      buildCard(context),
+                      buildCard(context),
+                      buildCard(context),
+                      buildCard(context),
+                    ]),
+                  ),
+                  Container(
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Kumpulan Rekomendasi Untukmu",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        // Text("lihat semua >")
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 20, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("Ada Rekomendasi yang Bikin Happy"),
+                        // Text("lihat semua >")
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: Image.asset(
+                      "assets/bannervmart.png",
+                      alignment: Alignment.center,
+                      width: 700.0,
+                      height: 250.0,
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(left: 30, right: 29),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Spesial hari ini',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        FlatButton(
+                          child: Text(
+                            'Lihat Semua>',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 10, 160, 22)),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(AllproductPage.tag);
                           },
-                        );
-                      },
-                    )),
-              ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 4,
+                      color: Colors.white,
+                      child: FutureBuilder(
+                        future: getProducts(),
+                        builder: (context, AsyncSnapshot snapshot) {
+                          print(snapshot.data);
+                          return ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 5,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ProductDetail(
+                                                product: snapshot.data['data']
+                                                    [index],
+                                              )));
+                                },
+                                child: CardSayur(
+                                  gambar: snapshot.data['data'][index]
+                                      ['picture_name'],
+                                  nama: snapshot.data['data'][index]['name'],
+                                  harga: snapshot.data['data'][index]['price'],
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      )),
+                ],
+              ),
             ),
           ),
         ),
