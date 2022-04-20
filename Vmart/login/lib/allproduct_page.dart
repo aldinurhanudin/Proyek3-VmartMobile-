@@ -57,9 +57,12 @@ class _AllproductPageState extends State<AllproductPage> {
             future: getProducts(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ListView.builder(
-                    scrollDirection: Axis.vertical,
+                return GridView.builder(
+                    //scrollDirection: Axis.vertical,
+
                     itemCount: snapshot.data['data'].length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
                     itemBuilder: (context, index) {
                       return Container(
                         width: MediaQuery.of(context).size.width / 8,
@@ -124,12 +127,14 @@ class _AllproductPageState extends State<AllproductPage> {
                                                     Navigator.push(
                                                         context,
                                                         MaterialPageRoute(
-                                                            builder: (context) => CartPage(
-                                                                // product: snapshot
-                                                                //         .data['data']
-                                                                //     [
-                                                                //     index],
-                                                                )));
+                                                            builder:
+                                                                (context) =>
+                                                                    CartPage(
+                                                                      product: snapshot
+                                                                              .data['data']
+                                                                          [
+                                                                          index],
+                                                                    )));
                                                   },
                                                   child: Icon(
                                                       Icons.shopping_cart)),
@@ -138,19 +143,16 @@ class _AllproductPageState extends State<AllproductPage> {
                                                     Navigator.push(
                                                         context,
                                                         MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CartPage()));
+                                                            builder:
+                                                                (context) =>
+                                                                    CartPage(
+                                                                      product: snapshot
+                                                                              .data['data']
+                                                                          [
+                                                                          index],
+                                                                    )));
                                                   },
                                                   child: Icon(Icons.share)),
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CartPage()));
-                                                  },
-                                                  child: Icon(Icons.favorite)),
                                             ],
                                           ),
                                           Text(snapshot.data['data'][index]

@@ -33,8 +33,10 @@ class _Menu extends State<Menu> {
   final Screens = [
     HomePage(),
     ProfilePage(),
-    CartPage(),
     ProfilePage(),
+    //CartPage(),
+    ProfilePage(),
+    
   ];
 
   // void _onItemTapped(int index) {
