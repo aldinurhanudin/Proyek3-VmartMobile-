@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:login/product_detail.dart';
 import 'package:login/widgets/card_sayur.dart';
 import 'package:login/widgets/custom_app_bar.dart';
+import 'package:login/widgets/flash_sale.dart';
 import 'package:login/widgets/menu_button.dart';
 import 'allproduct_page.dart';
 import 'register_page.dart';
@@ -78,43 +79,61 @@ class _HomePageState extends State<HomePage> {
                   ),
                   // SizedBox(height: 20),
                   Container(
-                      height: 40.0,
-                      color: Color.fromARGB(255, 213, 231, 233),
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(children: [
-                        Icon(
-                          Icons.location_on_outlined,
-                          size: 18,
+                    height: 40.0,
+                    color: Color.fromARGB(255, 213, 231, 233),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(children: [
+                      Icon(
+                        Icons.location_on_outlined,
+                        size: 18,
+                      ),
+                      Text(
+                        "Dikirim ke",
+                        style: TextStyle(
+                          fontSize: 12,
                         ),
-                        Text(
-                          "Dikirim ke",
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "Jakarta Pusat",
-                          style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w700),
-                        ),
-                        Icon(Icons.keyboard_arrow_down_rounded, size: 15),
-                      ])),
+                      ),
+                      Text(
+                        "Jakarta Pusat",
+                        style: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.w700),
+                      ),
+                      Icon(Icons.keyboard_arrow_down_rounded, size: 15),
+                    ]),
+                  ),
                   Positioned(
-                    top: 100,
-                    child: Row(
-                      children: [
-                        MenuButton(
-                          label: "Oficial Store",
-                          icon: Icon(Icons.description),
-                        ),
-                        MenuButton(
-                          label: "Lihat Semua",
-                          icon: Icon(Icons.description),
-                        ),
-                        MenuButton(label: "Rumah Tangga"),
-                        MenuButton(label: "Top Up & Tagihan"),
-                        MenuButton(label: "Kesehatan"),
-                      ],
+                    top: 90,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 100,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          MenuButton("assets/category-icon/official-store.png",
+                              label: "Official Store"),
+                          MenuButton("assets/category-icon/lihat-semua.png",
+                              label: "Lihat Semua"),
+                          MenuButton("assets/category-icon/rumah-tangga.png",
+                              label: "Rumah Tangga"),
+                          MenuButton("assets/category-icon/topup.png",
+                              label: "Top Up & Tagihan"),
+                          MenuButton("assets/category-icon/elektronik.png",
+                              label: "Elektronik"),
+                          MenuButton("assets/category-icon/fashion.png",
+                              label: "Fashion-Pria"),
+                          MenuButton("assets/category-icon/rumah-tangga.png",
+                              label: "Rumah Tangga"),
+                          MenuButton("assets/category-icon/keuangan.png",
+                              label: "Keuangan"),
+                          MenuButton("assets/category-icon/travel.png",
+                              label: "Travel & Entertainment"),
+                          MenuButton("assets/category-icon/elektronik.png",
+                              label: "Elektronik"),
+                          MenuButton(
+                              "assets/category-icon/komputer-dan-laptop.png",
+                              label: "Komputer"),
+                        ],
+                      ),
                     ),
                     // width: double.infinity,
                     // height: 50,
@@ -130,40 +149,82 @@ class _HomePageState extends State<HomePage> {
                   ),
                   CarouselSlider(
                     options: CarouselOptions(
-                        height: 125.0,
-                        autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 3),
-                        autoPlayAnimationDuration: Duration(milliseconds: 800),
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        pauseAutoPlayOnTouch: true,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.8,
-                        onPageChanged: (index, reason) {
-                          setState(() {
-                            _currentIndex = index;
-                          });
-                        }),
-                    items: cardList.map((item) {
-                      return ItemCard(title: item.toString());
+                        viewportFraction: 0.95, aspectRatio: 50 / 16),
+                    items: [
+                      "assets/carousel-slider/banner-1.webp",
+                      "assets/carousel-slider/banner-2.webp"
+                    ].map((i) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(
+                                  child: Image.asset(
+                                i,
+                                fit: BoxFit.contain,
+                              )),
+                            ),
+                          );
+                        },
+                      );
                     }).toList(),
                   ),
+                  SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: map<Widget>(cardList, (index, url) {
-                      return Container(
-                        width: _currentIndex == index ? 30 : 10.0,
-                        height: 10.0,
-                        margin: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 2.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: _currentIndex == index
-                              ? Colors.green
-                              : Colors.green.withOpacity(0.3),
-                        ),
-                      );
-                    }),
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      MenuButton("assets/category-icon2/bangga-lokal.png",
+                          label: "Bangga Lokal"),
+                      MenuButton("assets/category-icon2/bazar-hari-ini.png",
+                          label: "Bazar Hari Ini"),
+                      MenuButton("assets/category-icon2/live-shopping.png",
+                          label: "Live shopping"),
+                      MenuButton("assets/category-icon2/belanja-harian.png",
+                          label: "Belanja Harian"),
+                      MenuButton("assets/category-icon2/bayar-ditempat.png",
+                          label: "Bayar di Tempat"),
+                    ],
                   ),
+                  SizedBox(height: 10),
+                  FlashSale(),
+                  // CarouselSlider(
+                  //   options: CarouselOptions(
+                  //       height: 125.0,
+                  //       autoPlay: true,
+                  //       autoPlayInterval: Duration(seconds: 3),
+                  //       autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  //       autoPlayCurve: Curves.fastOutSlowIn,
+                  //       pauseAutoPlayOnTouch: true,
+                  //       enlargeCenterPage: true,
+                  //       viewportFraction: 0.8,
+                  //       onPageChanged: (index, reason) {
+                  //         setState(() {
+                  //           _currentIndex = index;
+                  //         });
+                  //       }),
+                  //   items: cardList.map((item) {
+                  //     return ItemCard(title: item.toString());
+                  //   }).toList(),
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: map<Widget>(cardList, (index, url) {
+                  //     return Container(
+                  //       width: _currentIndex == index ? 30 : 10.0,
+                  //       height: 10.0,
+                  //       margin: EdgeInsets.symmetric(
+                  //           vertical: 10.0, horizontal: 2.0),
+                  //       decoration: BoxDecoration(
+                  //         borderRadius: BorderRadius.circular(5),
+                  //         color: _currentIndex == index
+                  //             ? Colors.green
+                  //             : Colors.green.withOpacity(0.3),
+                  //       ),
+                  //     );
+                  //   }),
+                  // ),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.all(10),

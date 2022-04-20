@@ -39,12 +39,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_lints: ^1.0.0
   carousel_slider: ^4.0.0
+  flutter_svg: ^0.22.0
   http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
 
 flutter:
   uses-material-design: true
@@ -62,6 +62,10 @@ flutter:
     - assets/bannervmart.png
     - assets/tambah.png
     - assets/min.png
+    - assets/carousel-slider/
+    - assets/category-icon/
+    - assets/category-icon2/
+    - assets/product/
   fonts:
     - family: Nunito
       fonts:
