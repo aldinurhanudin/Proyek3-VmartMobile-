@@ -15,7 +15,7 @@ class CardSayur extends StatelessWidget {
       child: Container(
         height: 190,
         width: 195,
-        color: Colors.green,
+        color: Colors.white,
         child: Column(
           children: [
             Container(

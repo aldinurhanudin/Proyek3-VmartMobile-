@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:login/product_detail.dart';
 import 'package:login/widgets/card_sayur.dart';
 import 'package:login/widgets/custom_app_bar.dart';
+import 'package:login/widgets/menu_button.dart';
 import 'allproduct_page.dart';
 import 'register_page.dart';
 import 'package:http/http.dart' as http;
@@ -77,8 +78,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   // SizedBox(height: 20),
                   Container(
-                      height: 50.0,
-                      // color: Colors.green,
+                      height: 40.0,
+                      color: Color.fromARGB(255, 213, 231, 233),
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(children: [
                         Icon(
@@ -98,18 +99,34 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Icon(Icons.keyboard_arrow_down_rounded, size: 15),
                       ])),
-                  Container(
-                    width: double.infinity,
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return Container(
-                            margin: EdgeInsets.only(left: 10),
-                            child: Icon(Icons.book));
-                      },
+                  Positioned(
+                    top: 100,
+                    child: Row(
+                      children: [
+                        MenuButton(
+                          label: "Oficial Store",
+                          icon: Icon(Icons.description),
+                        ),
+                        MenuButton(
+                          label: "Lihat Semua",
+                          icon: Icon(Icons.description),
+                        ),
+                        MenuButton(label: "Rumah Tangga"),
+                        MenuButton(label: "Top Up & Tagihan"),
+                        MenuButton(label: "Kesehatan"),
+                      ],
                     ),
+                    // width: double.infinity,
+                    // height: 50,
+                    // child: ListView.builder(
+                    //   scrollDirection: Axis.horizontal,
+                    //   itemCount: 10,
+                    //   itemBuilder: (context, index) {
+                    //     return Container(
+                    //         margin: EdgeInsets.only(left: 20),
+                    //         child: Icon(Icons.add_business));
+                    //   },
+                    // ),
                   ),
                   CarouselSlider(
                     options: CarouselOptions(
@@ -316,17 +333,38 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 4,
-                    color: Colors.white,
-                    child:
-                        ListView(scrollDirection: Axis.horizontal, children: [
-                      buildCard(context),
-                      buildCard(context),
-                      buildCard(context),
-                      buildCard(context),
-                    ]),
-                  ),
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 4,
+                      color: Colors.white,
+                      child: FutureBuilder(
+                        future: getProducts(),
+                        builder: (context, AsyncSnapshot snapshot) {
+                          print(snapshot.data);
+                          return ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 5,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ProductDetail(
+                                                product: snapshot.data['data']
+                                                    [index],
+                                              )));
+                                },
+                                child: CardSayur(
+                                  gambar: snapshot.data['data'][index]
+                                      ['picture_name'],
+                                  nama: snapshot.data['data'][index]['name'],
+                                  harga: snapshot.data['data'][index]['price'],
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      )),
                   Container(
                     color: Colors.white,
                     width: MediaQuery.of(context).size.width,
