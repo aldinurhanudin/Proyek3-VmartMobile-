@@ -36,6 +36,7 @@ class _DetailprodukPageState extends State<DetailprodukPage> {
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
+            
             // color: Colors.white,
             child: ListView(
               shrinkWrap: true,
