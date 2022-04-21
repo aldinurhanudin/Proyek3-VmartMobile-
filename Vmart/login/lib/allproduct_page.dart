@@ -122,9 +122,10 @@ class _AllproductPageState extends State<AllproductPage> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(snapshot.data['data'][index]
-                                                  ['price']
-                                              .toString()),
+                                          Text('Rp.' +
+                                              snapshot.data['data'][index]
+                                                      ['price']
+                                                  .toString()),
                                           Text(snapshot.data['data'][index]
                                                       ['is_available']
                                                   .toString() +
