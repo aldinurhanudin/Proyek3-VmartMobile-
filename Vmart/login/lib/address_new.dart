@@ -65,7 +65,7 @@ class CreatePage extends StatelessWidget {
               ),
               SizedBox(height: 12),
               TextField(
-                decoration: InputDecoration(labelText: 'Nama Jalan, Gedung, No. Rumah'),
+                decoration: InputDecoration(labelText: 'Nama Jalan, Gedung, No.Rumah'),
               ),
               SizedBox(height: 12),
               TextField(

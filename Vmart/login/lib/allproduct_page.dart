@@ -57,16 +57,19 @@ class _AllproductPageState extends State<AllproductPage> {
             future: getProducts(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ListView.builder(
-                    scrollDirection: Axis.vertical,
+                return GridView.builder(
+                    //scrollDirection: Axis.vertical,
+
                     itemCount: snapshot.data['data'].length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
                     itemBuilder: (context, index) {
                       return Container(
                         width: MediaQuery.of(context).size.width / 8,
                         height: MediaQuery.of(context).size.width / 2.5,
                         child: Card(
                           elevation: 5,
-                          child: Row(
+                          child: Column(
                             children: [
                               GestureDetector(
                                 onTap: () {
@@ -108,54 +111,27 @@ class _AllproductPageState extends State<AllproductPage> {
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold)),
                                       ),
-                                      Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(snapshot.data['data'][index]
-                                            ['description']),
-                                      ),
+                                      // Flexible(
+                                      //   child: Align(
+                                      //     alignment: Alignment.topLeft,
+                                      //     child: Text(snapshot.data['data']
+                                      //         [index]['description']),
+                                      //   ),
+                                      // ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Row(
-                                            children: [
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) => CartPage(
-                                                                // product: snapshot
-                                                                //         .data['data']
-                                                                //     [
-                                                                //     index],
-                                                                )));
-                                                  },
-                                                  child: Icon(
-                                                      Icons.shopping_cart)),
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CartPage()));
-                                                  },
-                                                  child: Icon(Icons.share)),
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CartPage()));
-                                                  },
-                                                  child: Icon(Icons.favorite)),
-                                            ],
-                                          ),
+                                          Text('Rp.' +
+                                              snapshot.data['data'][index]
+                                                      ['price']
+                                                  .toString()),
                                           Text(snapshot.data['data'][index]
-                                                  ['price']
-                                              .toString())
+                                                      ['is_available']
+                                                  .toString() +
+                                              '/' +
+                                              snapshot.data['data'][index]
+                                                  ['product_unit']),
                                         ],
                                       ),
                                     ],

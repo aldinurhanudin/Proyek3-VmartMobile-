@@ -36,6 +36,9 @@ class _Menu extends State<Menu> {
     CreatePage(),
     CartPage(),
     ProfilePage(),
+    //CartPage(),
+    ProfilePage(),
+    
   ];
 
   // void _onItemTapped(int index) {
