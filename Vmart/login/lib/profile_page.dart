@@ -120,7 +120,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: [
                         Text("Alamat saya",
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
                         Text(" >",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold))
