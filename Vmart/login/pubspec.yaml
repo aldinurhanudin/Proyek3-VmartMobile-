@@ -67,6 +67,8 @@ flutter:
     - assets/category-icon/
     - assets/category-icon2/
     - assets/product/
+    - assets/images/
+    - assets/icons/
   fonts:
     - family: Nunito
       fonts:

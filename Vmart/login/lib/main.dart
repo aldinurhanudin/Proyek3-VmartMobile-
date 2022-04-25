@@ -7,6 +7,7 @@ import 'allproduct_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 import 'menu.dart';
+import 'profile/profile_screen.dart';
 import 'register_page.dart';
 import 'splash_page.dart';
 import 'profile_page.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           product: {},
         ),
     CreatePage.tag: (context) => CreatePage(),
-    
+    ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
   };
 

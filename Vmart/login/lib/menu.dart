@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/home_page.dart';
+import 'package:login/profile/profile_screen.dart';
 import 'package:login/profile_page.dart';
 
 import 'address_new.dart';
@@ -37,8 +38,8 @@ class _Menu extends State<Menu> {
     // CartPage(),
     ProfilePage(),
     //CartPage(),
-    ProfilePage(),
-    
+    //ProfilePage(),
+    ProfileScreen()
   ];
 
   // void _onItemTapped(int index) {
