@@ -13,11 +13,11 @@ class Body extends StatelessWidget {
         children: [
           ProfilePic(),
           SizedBox(height: 20),
-          ProfileMenu(
-            text: "Akun Saya",
-            icon: "assets/icons/User Icon.svg",
-            press: () => {},
-          ),
+          // ProfileMenu(
+          //   text: "Akun Saya",
+          //   icon: "assets/icons/User Icon.svg",
+          //   press: () => {},
+          // ),
           ProfileMenu(
             text: "Pesanan Saya",
             icon: "assets/icons/Cart Icon.svg",
@@ -26,6 +26,11 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "Pengaturan",
             icon: "assets/icons/Settings.svg",
+            press: () {},
+          ),
+          ProfileMenu(
+            text: "Alamat Saya",
+            icon: "assets/icons/User Icon.svg",
             press: () {},
           ),
           ProfileMenu(
