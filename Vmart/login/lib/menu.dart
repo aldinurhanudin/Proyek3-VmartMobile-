@@ -3,6 +3,7 @@ import 'package:login/home_page.dart';
 import 'package:login/profile/profile_screen.dart';
 import 'package:login/profile_page.dart';
 
+import 'address.dart';
 import 'address_new.dart';
 import 'cart_page.dart';
 
@@ -34,7 +35,8 @@ class _Menu extends State<Menu> {
   // ignore: non_constant_identifier_names
   final Screens = [
     HomePage(),
-    CreatePage(),
+    // CreatePage(),
+    Address(),
     // CartPage(),
     ProfilePage(),
     //CartPage(),
