@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:login/coba.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home_page.dart';
 import 'menu.dart';
 import 'register_page.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -13,6 +19,21 @@ class _LoginPageState extends State<LoginPage> {
   bool isHidden = true;
   TextEditingController emailC = TextEditingController();
   TextEditingController passC = TextEditingController();
+
+  void sign_in() async {
+    var response = await http.post(
+        Uri.parse("http://10.0.2.2:8000/api/sign_in"),
+        body: ({"email": emailC.text, "password": passC.text}));
+
+    if (response.statusCode == 200) {
+      final body = json.decode(response.body);
+
+      rutePage(body["token"]);
+    } else {
+      print("Gagal");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -72,8 +93,7 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          print("LOGIN DENGAN : EMAIL(${emailC.text}) & PASS(${passC.text})");
-          Navigator.of(context).pushNamed(Menu.tag);
+          sign_in();
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 10, 160, 22),
@@ -142,5 +162,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  all() {}
+  void rutePage(String token) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("login", token);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+  }
 }

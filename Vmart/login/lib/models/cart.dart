@@ -9,7 +9,16 @@ class Cart {
   final String? userid;
   final String? idcabang;
 
-  Cart({this.id, this.idproduk,this.judul,this.harga, this.hargax, this.thumbnail, this.jumlah, this.userid, this.idcabang});
+  Cart(
+      {this.id,
+      this.idproduk,
+      this.judul,
+      this.harga,
+      this.hargax,
+      this.thumbnail,
+      this.jumlah,
+      this.userid,
+      this.idcabang});
 
   factory Cart.fromJson(Map<String, dynamic> json) {
     return Cart(
@@ -24,7 +33,7 @@ class Cart {
       idcabang: json['idcabang'] as String,
     );
   }
-  
+
   factory Cart.fromMap(Map<String, dynamic> map) {
     return Cart(
       id: map['id'] as int,
@@ -38,5 +47,4 @@ class Cart {
       idcabang: map['idcabang'] as String,
     );
   }
-  
 }
