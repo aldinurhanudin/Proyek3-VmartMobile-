@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login/menu.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Getstarted_page.dart';
 import 'detailproduk_page.dart';
 import 'home_page.dart';
@@ -17,20 +19,21 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    startSplash();
+    autoDashboard();
   }
 
-  startSplash() async {
+  autoDashboard() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? val = pref.getString("login");
     var duration = const Duration(seconds: 5);
     return Timer(duration, () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) {
-// <<<<<<< HEAD
-//           return LoginPage();
-// =======
-          return GetstartedPage();
-        }),
-      );
+      if (val != null) {
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => Menu()), (route) => false);
+      } else {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => GetstartedPage()));
+      }
     });
   }
 
