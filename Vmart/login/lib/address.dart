@@ -43,7 +43,7 @@ class Address extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 100,
+              // height: 50,
               color: Colors.white,
               padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
               child: Column(
@@ -68,6 +68,9 @@ class Address extends StatelessWidget {
                     'WERU,KAB. CIREBON, JAWA BARAT, ID 45154',
                     style: TextStyle(fontSize: 12),
                   ),
+                  Container(
+                      margin: EdgeInsets.only(left: 350),
+                      child: Icon(Icons.location_on_outlined)),
                 ],
               ),
             ),
