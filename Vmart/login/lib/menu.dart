@@ -6,6 +6,7 @@ import 'package:login/profile_page.dart';
 import 'address.dart';
 import 'address_new.dart';
 import 'cart_page.dart';
+import 'edit_address.dart';
 
 class Menu extends StatefulWidget {
   static String tag = 'Menu';
@@ -36,7 +37,8 @@ class _Menu extends State<Menu> {
   final Screens = [
     HomePage(),
     // CreatePage(),
-    Address(),
+    // Address(),
+    EditAddress(),
     // CartPage(),
     ProfilePage(),
     //CartPage(),
