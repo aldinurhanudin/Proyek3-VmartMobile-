@@ -12,6 +12,7 @@ import 'profile/profile_screen.dart';
 import 'register_page.dart';
 import 'splash_page.dart';
 import 'profile_page.dart';
+import 'edit_address.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
           product: {},
         ),
     // CreatePage.tag: (context) => CreatePage(),
-      Address.tag: (context) => Address(),
+      // Address.tag: (context) => Address(),
+      EditAddress.tag: (context) => EditAddress(),
     ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
   };
