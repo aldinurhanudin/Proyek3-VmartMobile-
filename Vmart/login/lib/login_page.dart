@@ -34,6 +34,12 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void rutePage(String token) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("login", token);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -160,11 +166,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  void rutePage(String token) async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setString("login", token);
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
   }
 }
