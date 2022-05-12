@@ -15,7 +15,8 @@ class ProductDetail extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child: Image.network(product['picture_name']),
+            child: Image.network(
+                'http://10.0.2.2:8000/storage/' + product['picture_name']),
           ),
           SizedBox(
             height: 20,

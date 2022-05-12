@@ -82,18 +82,17 @@ class _AllproductPageState extends State<AllproductPage> {
                                               )));
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(15.0)),
-                                  padding: EdgeInsets.all(10),
-                                  height: 100,
-                                  width: 100,
-                                  child: Image.network(
-                                    snapshot.data['data'][index]
-                                        ['picture_name'],
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0)),
+                                    padding: EdgeInsets.all(10),
+                                    height: 100,
+                                    width: 100,
+                                    child: Image(
+                                        image: NetworkImage(
+                                            "http://10.0.2.2:8000/storage/${snapshot.data['data'][index]['picture_name']}"
+                                            // "http://10.0.2.2:8000/storage/image/${snapshot.data['data'][index]['picture_name']}",
+                                            ))),
                               ),
                               Expanded(
                                 child: Container(
