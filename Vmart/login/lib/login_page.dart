@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void sign_in() async {
     var response = await http.post(
-        Uri.parse("http://192.168.43.95:8000/api/sign_in"),
+        Uri.parse("http://10.0.2.2:8000/api/sign_in"),
         body: ({"email": emailC.text, "password": passC.text}));
 
     if (response.statusCode == 200) {
@@ -32,12 +32,6 @@ class _LoginPageState extends State<LoginPage> {
     } else {
       print("Gagal");
     }
-  }
-
-  void rutePage(String token) async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setString("login", token);
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
   }
 
   @override
@@ -166,5 +160,11 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void rutePage(String token) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("login", token);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
   }
 }
