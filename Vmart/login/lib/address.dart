@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login/address_new.dart';
+import 'package:login/edit_address.dart';
+
+import 'alamat_baru.dart';
 
 class Address extends StatelessWidget {
   static String tag = 'Address';
@@ -69,8 +73,15 @@ class Address extends StatelessWidget {
                     style: TextStyle(fontSize: 12),
                   ),
                   Container(
-                      margin: EdgeInsets.only(left: 350),
-                      child: Icon(Icons.location_on_outlined)),
+                    margin: EdgeInsets.only(left: 350),
+
+                    child: IconButton(
+                        icon: Icon(Icons.update),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(EditAddress.tag);
+                        }),
+                    //Icon(Icons.location_on_outlined)
+                  ),
                 ],
               ),
             ),
@@ -90,7 +101,19 @@ class Address extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Tambah Alamat"),
-                      Icon(Icons.add),
+
+                      Container(
+                        margin: EdgeInsets.only(left: 100),
+                        child: IconButton(
+                            icon: Icon(Icons.add),
+                            onPressed: () {
+                              // Navigator.of(context).pushNamed(CreatePage.tag);
+                               Navigator.of(context).pushNamed(AlamatBaru.tag);
+                              
+                            }),
+                      ),
+
+                      // Icon(Icons.add),
                     ],
                   ),
                 )),

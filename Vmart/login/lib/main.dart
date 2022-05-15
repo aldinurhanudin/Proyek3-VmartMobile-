@@ -4,6 +4,7 @@ import 'package:login/register_page.dart';
 import 'Getstarted_page.dart';
 import 'address.dart';
 import 'address_new.dart';
+import 'alamat_baru.dart';
 import 'allproduct_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
     ProductDetail.tag: (context) => ProductDetail(
           product: {},
         ),
-    // CreatePage.tag: (context) => CreatePage(),
-      // Address.tag: (context) => Address(),
+    CreatePage.tag: (context) => CreatePage(),
+    AlamatBaru.tag: (context) => AlamatBaru(),
+      Address.tag: (context) => Address(),
       EditAddress.tag: (context) => EditAddress(),
     ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
