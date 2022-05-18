@@ -40,7 +40,7 @@ class _Menu extends State<Menu> {
     // Address(),
     EditAddress(),
     // CartPage(),
-    ProfilePage(),
+    CartPage(),
     //CartPage(),
     //ProfilePage(),
     ProfileScreen()

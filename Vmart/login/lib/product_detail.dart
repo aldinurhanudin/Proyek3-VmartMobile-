@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'cart_page.dart';
 
-class ProductDetail extends StatelessWidget {
+class ProductDetail extends StatefulWidget {
   static String tag = 'productdetail';
   final Map product;
 
   ProductDetail({required this.product});
+
+  @override
+  State<ProductDetail> createState() => _ProductDetailState();
+}
+
+class _ProductDetailState extends State<ProductDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +23,8 @@ class ProductDetail extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child: Image.network(
-                'http://10.0.2.2:8000/storage/' + product['picture_name']),
+            child: Image.network('http://10.0.2.2:8000/storage/' +
+                widget.product['picture_name']),
           ),
           SizedBox(
             height: 20,
@@ -29,13 +35,21 @@ class ProductDetail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  product['price'],
+                  widget.product['price'],
                   style: TextStyle(fontSize: 22),
                 ),
                 Row(
                   children: [
                     IconButton(
                       onPressed: () {
+                        setState(() {
+                          dataKeranjang.add({
+                            "name": widget.product['name'],
+                            "price": widget.product['price'],
+                            "image": widget.product['picture_name']
+                          });
+                        });
+                        print(dataKeranjang);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -49,9 +63,11 @@ class ProductDetail extends StatelessWidget {
               ],
             ),
           ),
-          Text(product['description'])
+          Text(widget.product['description'])
         ],
       ),
     );
   }
 }
+
+List<Map<String, dynamic>> dataKeranjang = [];

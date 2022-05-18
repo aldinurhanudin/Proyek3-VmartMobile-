@@ -23,13 +23,13 @@ class _RegisterPageState extends State<RegisterPage> {
           height: 100),
     );
 
-    final email = TextFormField(
+    final username = TextFormField(
       controller: emailC,
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       // initialValue: 'aldinurhanudin08@gmail.com',
       decoration: InputDecoration(
-        hintText: 'Email',
+        hintText: 'Username',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0),
@@ -64,28 +64,69 @@ class _RegisterPageState extends State<RegisterPage> {
           )),
     );
 
-    final UlangiPassword = TextFormField(
-      controller: passC,
+    final namalengkap = TextFormField(
+      controller: emailC,
+      keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      // initialValue: 'terserah',
-      obscureText: isHidden,
-      textInputAction: TextInputAction.done,
+      // initialValue: 'aldinurhanudin08@gmail.com',
       decoration: InputDecoration(
-          hintText: 'UlangiPassword',
-          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-          prefixIcon: Icon(Icons.vpn_key),
-          suffixIcon: IconButton(
-            onPressed: () {
-              if (isHidden == true) {
-                isHidden = false;
-              } else {
-                isHidden = true;
-              }
-              setState(() {});
-            },
-            icon: Icon(Icons.remove_red_eye),
-          )),
+        hintText: 'Nama Lengkap',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
+        ),
+        prefixIcon: Icon(Icons.email),
+      ),
+    );
+    final nohp = TextFormField(
+      controller: emailC,
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      // initialValue: 'aldinurhanudin08@gmail.com',
+      decoration: InputDecoration(
+        hintText: 'No Hp',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
+        ),
+        prefixIcon: Icon(Icons.phone),
+      ),
+    );
+    final email = TextFormField(
+      controller: emailC,
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      // initialValue: 'aldinurhanudin08@gmail.com',
+      decoration: InputDecoration(
+        hintText: 'Email',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
+        ),
+        prefixIcon: Icon(Icons.email),
+      ),
+    );
+    final alamat = TextFormField(
+      controller: emailC,
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      // initialValue: 'aldinurhanudin08@gmail.com',
+      decoration: InputDecoration(
+        hintText: 'Alamat',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
+        ),
+        prefixIcon: Icon(Icons.email),
+      ),
     );
     final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
@@ -150,11 +191,17 @@ class _RegisterPageState extends State<RegisterPage> {
               children: <Widget>[
                 Container(
                     margin: EdgeInsets.only(top: 40, left: 40), child: logo),
-                email,
+                username,
                 SizedBox(height: 8.0),
                 password,
                 SizedBox(height: 8.0),
-                UlangiPassword,
+                namalengkap,
+                SizedBox(height: 8.0),
+                nohp,
+                SizedBox(height: 8.0),
+                email,
+                SizedBox(height: 8.0),
+                alamat,
                 SizedBox(height: 24.0),
                 registerButton,
                 // forgotLabel,
