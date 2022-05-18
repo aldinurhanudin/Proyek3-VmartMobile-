@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url = "http://10.0.127.92:8000/api/produk";
+  final String url = "http://10.0.2.2:8000/api/produk";
   Future getProducts() async {
     var response = await http.get(Uri.parse(url));
     print(json.decode(response.body));
@@ -109,16 +109,16 @@ class _HomePageState extends State<HomePage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          MenuButton("assets/category-icon/official-store.png",
-                              label: "Official Store"),
-                          MenuButton("assets/category-icon/lihat-semua.png",
-                              label: "Lihat Semua"),
-                          MenuButton("assets/category-icon/rumah-tangga.png",
-                              label: "Rumah Tangga"),
-                          MenuButton("assets/category-icon/topup.png",
-                              label: "Top Up & Tagihan"),
+                          MenuButton("assets/wortel.png", label: "Vegetables"),
+                          MenuButton("assets/buah.png", label: "Fruits"),
+                          MenuButton("assets/produk.png", label: "Produk"),
+                          MenuButton("assets/kategori.png", label: "Produk"),
+                          MenuButton("assets/wortel.png", label: "Vegetables"),
+                          MenuButton("assets/buah.png", label: "Fruits"),
+                          MenuButton("assets/produk.png", label: "Produk"),
+                          MenuButton("assets/kategori.png", label: "Produk"),
                           MenuButton("assets/category-icon/elektronik.png",
-                              label: "Elektronik"),
+                              label: "Buah Segar"),
                           MenuButton("assets/category-icon/fashion.png",
                               label: "Fashion-Pria"),
                           MenuButton("assets/category-icon/rumah-tangga.png",
@@ -151,7 +151,8 @@ class _HomePageState extends State<HomePage> {
                     options: CarouselOptions(
                         viewportFraction: 0.95, aspectRatio: 50 / 16),
                     items: [
-                      "assets/carousel-slider/banner-1.webp",
+                      "assets/carousel-slider/coverlogin.png",
+                      // "assets/carousel-slider/banner-1.webp",
                       "assets/carousel-slider/banner-2.webp"
                     ].map((i) {
                       return Builder(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'cart_page.dart';
+
 class ProductDetail extends StatelessWidget {
   static String tag = 'productdetail';
   final Map product;
@@ -31,7 +33,18 @@ class ProductDetail extends StatelessWidget {
                   style: TextStyle(fontSize: 22),
                 ),
                 Row(
-                  children: [Icon(Icons.shopping_cart), Icon(Icons.share)],
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CartPage()));
+                      },
+                      icon: Icon(Icons.shopping_cart),
+                    ),
+                    Icon(Icons.share)
+                  ],
                 )
               ],
             ),

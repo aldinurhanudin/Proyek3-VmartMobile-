@@ -43,7 +43,6 @@ dependencies:
   flutter_svg: ^0.22.0
   http: ^0.13.4
   image_picker:
-  
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +65,7 @@ flutter:
     - assets/tambah.png
     - assets/min.png
     - assets/carousel-slider/
+    - assets/carousel-slider/coverlogin.png
     - assets/category-icon/
     - assets/category-icon2/
     - assets/product/
