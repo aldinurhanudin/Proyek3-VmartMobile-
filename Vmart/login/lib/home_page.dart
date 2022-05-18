@@ -417,7 +417,10 @@ class _HomePageState extends State<HomePage> {
                                               )));
                                 },
                                 child: CardSayur(
-                                  gambar: 'http://10.0.127.92:8000/storage/' +
+                                  // gambar: 'http://10.0.2.2:8000/storage/' +
+                                  //     snapshot.data['data'][index]
+                                  //         ['picture_name'],
+                                  gambar: 'http://10.0.2.2:8000/storage/' +
                                       snapshot.data['data'][index]
                                           ['picture_name'],
                                   nama: snapshot.data['data'][index]['name'],
