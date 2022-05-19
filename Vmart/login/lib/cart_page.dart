@@ -19,18 +19,25 @@ class _CartPageState extends State<CartPage> {
         backgroundColor: Colors.green,
       ),
       body: Padding(
-          padding: EdgeInsets.all(10),
-          child: ListView.builder(
-            itemCount: dataKeranjang.length,
-            itemBuilder: (context, index) {
-              print(dataKeranjang);
-              return ItemKeranjang(
-                gambar: dataKeranjang[index]['image'],
-                nama: dataKeranjang[index]['name'],
-                harga: dataKeranjang[index]['price'],
-              );
-            },
-          )),
+        padding: EdgeInsets.all(10),
+        child: ListView.builder(
+          itemCount: dataKeranjang.length,
+          itemBuilder: (context, index) {
+            print(dataKeranjang);
+            return ItemKeranjang(
+              gambar: dataKeranjang[index]['image'],
+              nama: dataKeranjang[index]['name'],
+              harga: dataKeranjang[index]['price'],
+            );
+          },
+        ),
+        // child: ElevatedButton(
+        //   child: Text('checkout'),
+        //   onPressed:(){
+        //     showModalBottomSheet(context: context, builder: builder)
+        //   }
+        // )
+      ),
     );
   }
 }
@@ -67,7 +74,9 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: NetworkImage(widget.gambar!)),
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          'http://10.0.2.2:8000/storage/' + widget.gambar!)),
                 )),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

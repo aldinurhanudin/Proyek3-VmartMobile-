@@ -54,7 +54,7 @@ class CardSayur extends StatelessWidget {
                   children: [
                     Text("Rp. ${harga.toString()}"),
                     SizedBox(width: 20),
-                    Text("/gram")
+                    Text("1/Kg")
                   ],
                 ),
               ),
