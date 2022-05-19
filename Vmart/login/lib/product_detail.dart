@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/favorite.dart';
 
 import 'cart_page.dart';
 
@@ -57,7 +58,23 @@ class _ProductDetailState extends State<ProductDetail> {
                       },
                       icon: Icon(Icons.shopping_cart),
                     ),
-                    Icon(Icons.share)
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          dataKeranjang.add({
+                            "name": widget.product['name'],
+                            "price": widget.product['price'],
+                            "image": widget.product['picture_name']
+                          });
+                        });
+                        print(dataKeranjang);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Favorite()));
+                      },
+                      icon: Icon(Icons.favorite),
+                    ),
                   ],
                 )
               ],
