@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login/product_detail.dart';
 
+import 'models/cart.dart';
+
 class CartPage extends StatefulWidget {
   static String tag = 'Cartpage';
 
@@ -13,10 +15,74 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+    // currentUser.cart.forEach((Cart cart)=> productPrice += cart.quantity*cart.chair.price);
     return Scaffold(
       appBar: AppBar(
         title: Text("Keranjang"),
         backgroundColor: Colors.green,
+      ),
+      bottomSheet: Container(
+        height: 130.0,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.0), topRight: Radius.circular(40.0)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black26, offset: Offset(0, -1), blurRadius: 20.0)
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Total Pembayaran',
+                      style: TextStyle(
+                          fontSize: 15.0, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '\Rp.10000.00',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      height: 40.0,
+                      width: 120.0,
+                      margin: EdgeInsets.only(left: 5),
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(10.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              offset: Offset(0, 2),
+                              blurRadius: 30.0,
+                            )
+                          ]),
+                      child: Center(
+                        child: Text(
+                          'CheckOut',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 18.0),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ]),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
@@ -31,12 +97,6 @@ class _CartPageState extends State<CartPage> {
             );
           },
         ),
-        // child: ElevatedButton(
-        //   child: Text('checkout'),
-        //   onPressed:(){
-        //     showModalBottomSheet(context: context, builder: builder)
-        //   }
-        // )
       ),
     );
   }
