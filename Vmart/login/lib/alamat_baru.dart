@@ -76,10 +76,10 @@ class _AlamatBaruState extends State<AlamatBaru> {
               ),
               SizedBox(height: 10,),
               Row(
-                children: [
-                  OutlineButton(child: Text("Simpan"), onPressed: () => simpanData(),),
-                  OutlineButton(child: Text("Lihat"), onPressed: () => lihatData(),),
-                ]
+                // children: [
+                //   OutlineButton(child: Text("Simpan"), onPressed: () => simpanData(),),
+                //   OutlineButton(child: Text("Lihat"), onPressed: () => lihatData(),),
+                // ]
               )
             ]
           ),
