@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/favorite.dart';
 import 'package:login/product_detail.dart';
 import 'package:login/register_page.dart';
 import 'Getstarted_page.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
     CreatePage.tag: (context) => CreatePage(),
     AlamatBaru.tag: (context) => AlamatBaru(),
       Address.tag: (context) => Address(),
-      EditAddress.tag: (context) => EditAddress(),
+      // EditAddress.tag: (context) => EditAddress(),
+      Favorite.tag: (context) => Favorite(),
     ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
   };

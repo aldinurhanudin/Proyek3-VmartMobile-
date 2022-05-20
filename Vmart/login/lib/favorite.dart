@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login/product_detail.dart';
 
 class Favorite extends StatefulWidget {
+  static String tag = 'Favorite';
   const Favorite({ Key? key }) : super(key: key);
 
   @override
