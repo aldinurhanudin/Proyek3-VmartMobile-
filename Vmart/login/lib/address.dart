@@ -14,16 +14,14 @@ class Address extends StatefulWidget {
 //   final Map address;
 // Address({required this.address});
 
-
-
   @override
   State<Address> createState() => _AddressState();
-}  
+}
 
 class _AddressState extends State<Address> {
-  final String url = "http://10.0.127.92:8000/api/address";
-  // final String url = "http://10.0.2.2:8000/api/address";
-  
+  // final String url = "http://10.0.127.92:8000/api/address";
+  final String url = "http://10.0.2.2:8000/api/address";
+
   // final String url = "http://192.168.43.89:8000/api/address/update/{id}";
 
   Future getAlamat() async {
@@ -91,7 +89,6 @@ class _AddressState extends State<Address> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
-
                                 ),
                               ),
                               Text(
@@ -135,27 +132,27 @@ class _AddressState extends State<Address> {
                         //       onPressed: () {
                         //         print('OK');
                         //       },
-                              // child: Row(
-                              //   mainAxisAlignment:
-                              //       MainAxisAlignment.spaceBetween,
-                              //   children: [
-                              //     Text("Tambah Alamat"),
+                        // child: Row(
+                        //   mainAxisAlignment:
+                        //       MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     Text("Tambah Alamat"),
 
-                              //     Container(
-                              //       margin: EdgeInsets.only(left: 100),
-                              //       child: IconButton(
-                              //           icon: Icon(Icons.add),
-                              //           onPressed: () {
-                              //             // Navigator.of(context).pushNamed(CreatePage.tag);
-                              //             Navigator.of(context)
-                              //                 .pushNamed(AlamatBaru.tag);
-                              //           }),
-                              //     ),
+                        //     Container(
+                        //       margin: EdgeInsets.only(left: 100),
+                        //       child: IconButton(
+                        //           icon: Icon(Icons.add),
+                        //           onPressed: () {
+                        //             // Navigator.of(context).pushNamed(CreatePage.tag);
+                        //             Navigator.of(context)
+                        //                 .pushNamed(AlamatBaru.tag);
+                        //           }),
+                        //     ),
 
-                              //     // Icon(Icons.add),
-                              //   ],
-                              // ),
-                            // )),
+                        //     // Icon(Icons.add),
+                        //   ],
+                        // ),
+                        // )),
                       ],
                     );
                   });
