@@ -22,8 +22,8 @@ class _LoginPageState extends State<LoginPage> {
 
   void sign_in() async {
     var response = await http.post(
-        //  Uri.parse("http://10.0.127.92:8000/api/sign_in"),
-        Uri.parse("http://10.0.2.2:8000/api/sign_in"),
+         Uri.parse("http://192.168.109.95:8000/api/sign_in"),
+        // Uri.parse("http://10.0.2.2:8000/api/sign_in"),
         body: ({"email": emailC.text, "password": passC.text}));
 
     if (response.statusCode == 200) {
