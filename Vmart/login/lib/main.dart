@@ -15,6 +15,7 @@ import 'register_page.dart';
 import 'splash_page.dart';
 import 'profile_page.dart';
 import 'edit_address.dart';
+import 'bantuan.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
     CreatePage.tag: (context) => CreatePage(),
     AlamatBaru.tag: (context) => AlamatBaru(),
       Address.tag: (context) => Address(),
+      Bantuan.tag: (context) => Bantuan(),
       // EditAddress.tag: (context) => EditAddress(),
       Favorite.tag: (context) => Favorite(),
     ProfileScreen.tag: (context) => ProfileScreen(),

@@ -19,7 +19,8 @@ class Address extends StatefulWidget {
 }
 
 class _AddressState extends State<Address> {
-   final String url = "http://192.168.109.95:8000/api/address";
+  final String url = "http://192.168.43.89:8000/api/address";
+
   // final String url = "http://10.0.2.2:8000/api/address";
 
   // final String url = "http://192.168.43.89:8000/api/address/update/{id}";
