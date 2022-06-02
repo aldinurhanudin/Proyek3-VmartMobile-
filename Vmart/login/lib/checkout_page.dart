@@ -23,7 +23,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     //       height: 100),
     // );
 
-    final username = TextFormField(
+    final pengirimanuntuknama = TextFormField(
       controller: emailC,
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -56,23 +56,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
         prefixIcon: Icon(Icons.phone),
       ),
     );
-
-    final email = TextFormField(
-      controller: emailC,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      // initialValue: 'aldinurhanudin08@gmail.com',
-      decoration: InputDecoration(
-        hintText: 'Email',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0),
-          borderSide:
-              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
-        ),
-        prefixIcon: Icon(Icons.email),
-      ),
-    );
     final alamat = TextFormField(
       controller: emailC,
       keyboardType: TextInputType.emailAddress,
@@ -89,6 +72,23 @@ class _CheckoutPageState extends State<CheckoutPage> {
         prefixIcon: Icon(Icons.email),
       ),
     );
+    final catatan = TextFormField(
+      controller: emailC,
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      // initialValue: 'aldinurhanudin08@gmail.com',
+      decoration: InputDecoration(
+        hintText: 'Catatan',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
+        ),
+        prefixIcon: Icon(Icons.email),
+      ),
+    );
+
     final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
@@ -101,7 +101,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 10, 160, 22),
-        child: Text('Sign Up',
+        child: Text('Buat Pesanan',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
       ),
     );
@@ -152,15 +152,14 @@ class _CheckoutPageState extends State<CheckoutPage> {
               children: <Widget>[
                 // Container(
                 //     margin: EdgeInsets.only(top: 40, left: 40), child: logo),
-                username,
+                pengirimanuntuknama,
                 SizedBox(height: 8.0),
-
                 nohp,
-                SizedBox(height: 8.0),
-                email,
                 SizedBox(height: 8.0),
                 alamat,
                 SizedBox(height: 24.0),
+                catatan,
+                SizedBox(height: 8.0),
                 registerButton,
                 // forgotLabel,
                 daftar
