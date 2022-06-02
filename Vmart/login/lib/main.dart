@@ -7,6 +7,7 @@ import 'address.dart';
 import 'address_new.dart';
 import 'alamat_baru.dart';
 import 'allproduct_page.dart';
+import 'checkout_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 import 'menu.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
+    CheckoutPage.tag: (context) => CheckoutPage(),
     AllproductPage.tag: (context) => AllproductPage(),
     ProductDetail.tag: (context) => ProductDetail(
           product: {},
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
       Bantuan.tag: (context) => Bantuan(),
       // EditAddress.tag: (context) => EditAddress(),
       Favorite.tag: (context) => Favorite(),
+      
     ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
   };

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:login/checkout_page.dart';
 import 'package:login/product_detail.dart';
+// import 'package:login/register_page.dart';
 
+// import 'checkout_page.dart';
 import 'models/cart.dart';
+import 'register_page.dart';
 
 class CartPage extends StatefulWidget {
   static String tag = 'Cartpage';
@@ -59,23 +63,31 @@ class _CartPageState extends State<CartPage> {
                       width: 120.0,
                       margin: EdgeInsets.only(left: 5),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          // color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(10.0),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black,
+                              color: Colors.white,
                               offset: Offset(0, 2),
                               blurRadius: 30.0,
                             )
                           ]),
-                      child: Center(
-                        child: Text(
-                          'CheckOut',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 18.0),
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(CheckoutPage.tag);
+                        },
+                        child: Center(
+                          child: Text(
+                            'CheckOut',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 18.0),
+                          ),
                         ),
                       ),
                     )
@@ -155,6 +167,10 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                   IconButton(
                     onPressed: add,
                     icon: Icon(Icons.add),
+                  ),
+                  IconButton(
+                    onPressed: add,
+                    icon: Icon(Icons.delete),
                   ),
                 ])
               ],
