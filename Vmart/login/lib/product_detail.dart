@@ -80,7 +80,37 @@ class _ProductDetailState extends State<ProductDetail> {
               ],
             ),
           ),
-          Text(widget.product['description'])
+          Text(widget.product['description']),
+          Container(
+            height: 40.0,
+            width: 250.0,
+            // margin: EdgeInsets.only(right: 9, left: 9),
+            margin: EdgeInsets.only(top: 9),
+            padding: EdgeInsets.only(right: 9, left: 9),
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(10.0),
+              // boxShadow: [
+              //   // BoxShadow(
+              //   //   color: Colors.black,
+              //   //   offset: Offset(0, 2),
+              //   //   // blurRadius: 30.0,
+              //   // )
+              // ]
+            ),
+            child: Center(
+              child: Text(
+                'Beli Sekarang',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    
+                    fontSize: 18.0),
+                    
+              ),
+            ),
+          )
         ],
       ),
     );

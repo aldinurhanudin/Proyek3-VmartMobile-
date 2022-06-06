@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/favorite.dart';
 import 'package:login/home_page.dart';
 import 'package:login/profile/profile_screen.dart';
 import 'package:login/profile_page.dart';
@@ -6,7 +7,7 @@ import 'package:login/profile_page.dart';
 import 'address.dart';
 import 'address_new.dart';
 import 'cart_page.dart';
-import 'edit_address.dart';
+// import 'edit_address.dart';
 
 class Menu extends StatefulWidget {
   static String tag = 'Menu';
@@ -38,7 +39,8 @@ class _Menu extends State<Menu> {
     HomePage(),
     // CreatePage(),
     // Address(),
-    EditAddress(),
+    // EditAddress(),
+    Favorite(),
     // CartPage(),
     CartPage(),
     //CartPage(),

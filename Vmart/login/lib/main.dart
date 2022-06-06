@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/favorite.dart';
 import 'package:login/product_detail.dart';
 import 'package:login/register_page.dart';
 import 'Getstarted_page.dart';
@@ -6,6 +7,7 @@ import 'address.dart';
 import 'address_new.dart';
 import 'alamat_baru.dart';
 import 'allproduct_page.dart';
+import 'checkout_page.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 import 'menu.dart';
@@ -14,6 +16,7 @@ import 'register_page.dart';
 import 'splash_page.dart';
 import 'profile_page.dart';
 import 'edit_address.dart';
+import 'bantuan.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +28,7 @@ class MyApp extends StatelessWidget {
     LoginPage.tag: (context) => LoginPage(),
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
+    CheckoutPage.tag: (context) => CheckoutPage(),
     AllproductPage.tag: (context) => AllproductPage(),
     ProductDetail.tag: (context) => ProductDetail(
           product: {},
@@ -32,7 +36,10 @@ class MyApp extends StatelessWidget {
     CreatePage.tag: (context) => CreatePage(),
     AlamatBaru.tag: (context) => AlamatBaru(),
       Address.tag: (context) => Address(),
-      EditAddress.tag: (context) => EditAddress(),
+      Bantuan.tag: (context) => Bantuan(),
+      // EditAddress.tag: (context) => EditAddress(),
+      Favorite.tag: (context) => Favorite(),
+      
     ProfileScreen.tag: (context) => ProfileScreen(),
     Menu.tag: (context) => Menu(),
   };

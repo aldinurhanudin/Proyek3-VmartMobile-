@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //  final String url = "http://192.168.109.95:8000/api/produk";
   final String url = "http://10.0.2.2:8000/api/produk";
   Future getProducts() async {
     var response = await http.get(Uri.parse(url));
@@ -177,13 +178,12 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       MenuButton("assets/category-icon2/bangga-lokal.png",
-                          label: "Bangga Lokal"),
+                          label: "Petani Lokal"),
                       MenuButton("assets/category-icon2/bazar-hari-ini.png",
                           label: "Bazar Hari Ini"),
                       MenuButton("assets/category-icon2/live-shopping.png",
                           label: "Live shopping"),
-                      MenuButton("assets/category-icon2/belanja-harian.png",
-                          label: "Belanja Harian"),
+                      MenuButton("assets/Logo.png", label: "Belanja sayuran"),
                       MenuButton("assets/category-icon2/bayar-ditempat.png",
                           label: "Bayar di Tempat"),
                     ],
@@ -226,85 +226,85 @@ class _HomePageState extends State<HomePage> {
                   //     );
                   //   }),
                   // ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Kategori",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          "lihat semua >",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(left: 20, right: 29),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundColor: Colors.white,
-                              backgroundImage: AssetImage('assets/wortel.png'),
-                            ),
-                            Text('Vegetables'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundColor: Colors.white,
-                              backgroundImage: AssetImage('assets/buah.png'),
-                            ),
-                            Text('Fruits'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundColor: Colors.white,
-                              backgroundImage: AssetImage('assets/produk.png'),
-                            ),
-                            Text('Semua Produk'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundColor: Colors.white,
-                              backgroundImage:
-                                  AssetImage('assets/kategori.png'),
-                            ),
-                            Text(
-                              'Produk',
-                              maxLines: 2,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width,
+                  //   margin: EdgeInsets.all(10),
+                  //   padding: EdgeInsets.only(left: 20, right: 29),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     children: [
+                  //       Text(
+                  //         "Kategori",
+                  //         style: TextStyle(
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 18,
+                  //         ),
+                  //       ),
+                  //       Text(
+                  //         "lihat semua >",
+                  //         style: TextStyle(
+                  //           color: Colors.green,
+                  //           fontSize: 18,
+                  //         ),
+                  //       )
+                  //     ],
+                  //   ),
+                  // ),
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width,
+                  //   margin: EdgeInsets.all(10),
+                  //   padding: EdgeInsets.only(left: 20, right: 29),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Column(
+                  //         children: [
+                  //           CircleAvatar(
+                  //             radius: 30,
+                  //             backgroundColor: Colors.white,
+                  //             backgroundImage: AssetImage('assets/wortel.png'),
+                  //           ),
+                  //           Text('Vegetables'),
+                  //         ],
+                  //       ),
+                  //       Column(
+                  //         children: [
+                  //           CircleAvatar(
+                  //             radius: 30,
+                  //             backgroundColor: Colors.white,
+                  //             backgroundImage: AssetImage('assets/buah.png'),
+                  //           ),
+                  //           Text('Fruits'),
+                  //         ],
+                  //       ),
+                  //       Column(
+                  //         children: [
+                  //           CircleAvatar(
+                  //             radius: 30,
+                  //             backgroundColor: Colors.white,
+                  //             backgroundImage: AssetImage('assets/produk.png'),
+                  //           ),
+                  //           Text('Semua Produk'),
+                  //         ],
+                  //       ),
+                  //       Column(
+                  //         children: [
+                  //           CircleAvatar(
+                  //             radius: 30,
+                  //             backgroundColor: Colors.white,
+                  //             backgroundImage:
+                  //                 AssetImage('assets/kategori.png'),
+                  //           ),
+                  //           Text(
+                  //             'Produk',
+                  //             maxLines: 2,
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.all(10),

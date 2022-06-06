@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login/address.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../bantuan.dart';
 import '../../login_page.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -53,12 +54,16 @@ class _BodyState extends State<Body> {
           ProfileMenu(
             text: "Alamat Saya",
             icon: "assets/icons/User Icon.svg",
-            press: () {Navigator.of(context).pushNamed(Address.tag);},
+            press: () {
+              Navigator.of(context).pushNamed(Address.tag);
+            },
           ),
           ProfileMenu(
             text: "Bantuan",
             icon: "assets/icons/Question mark.svg",
-            press: () {},
+            press: () {
+              Navigator.of(context).pushNamed(Bantuan.tag);
+            },
           ),
           ProfileMenu(
             text: "Log Out",
