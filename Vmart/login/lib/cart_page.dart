@@ -38,10 +38,14 @@ class _CartPageState extends State<CartPage> {
           ],
         ),
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                Divider(
+                  thickness: 2,
+                  color: Colors.black,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
