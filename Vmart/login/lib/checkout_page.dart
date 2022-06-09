@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/menu.dart';
 import 'home_page.dart';
 
 class CheckoutPage extends StatefulWidget {
@@ -40,7 +41,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         color: Colors.green,
         child: TextButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(HomePage.tag);
+            Navigator.of(context).pushNamed(Menu.tag);
           },
           child: Container(
               alignment: Alignment.center,
@@ -177,6 +178,46 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(height: 10),
+            Stack(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
+                  alignment: Alignment.bottomCenter,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withAlpha(50),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(5.0),
+                  width: MediaQuery.of(context).size.width - 10,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'TOTAL',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline6!
+                              .copyWith(color: Colors.white),
+                        ),
+                        // Text(
+                        //   'ST'
+                        // ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

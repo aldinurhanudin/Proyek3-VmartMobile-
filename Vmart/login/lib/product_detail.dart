@@ -63,7 +63,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         setState(() {
                           dataKeranjang.add({
                             "name": widget.product['name'],
-                            "price": widget.product['price'],
+                            "price": int.parse(widget.product['price']),
                             "image": widget.product['picture_name']
                           });
                         });
@@ -105,9 +105,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    
                     fontSize: 18.0),
-                    
               ),
             ),
           )
