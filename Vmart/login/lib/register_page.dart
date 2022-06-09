@@ -27,8 +27,8 @@ class _RegisterPageState extends State<RegisterPage> {
           "email": emailC.text,
           "password": passC.text,
           "username": usernameC.text,
-          "nohp": nohpC.text,
-          "alamat": alamatC.text
+          "phone_number": nohpC.text,
+          "address": alamatC.text
         }));
 
     if (response.statusCode == 200) {

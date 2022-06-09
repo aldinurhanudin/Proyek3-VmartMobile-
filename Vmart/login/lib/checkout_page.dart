@@ -102,7 +102,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text("Tranfer bank"),
+                Text("Bayar ditempat"),
               ],
             ),
             Row(
@@ -119,7 +119,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text("Bayar ditempat"),
+                Text("Tranfer bank"),
               ],
             ),
             Text(
