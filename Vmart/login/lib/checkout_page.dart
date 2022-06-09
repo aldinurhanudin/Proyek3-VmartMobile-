@@ -1,175 +1,219 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'login_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   static String tag = 'Checkoutpage';
+
   @override
-  _CheckoutPageState createState() => new _CheckoutPageState();
+  State<CheckoutPage> createState() => _CheckoutPageState();
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
-  bool isHidden = true;
-  TextEditingController emailC = TextEditingController();
-  TextEditingController passC = TextEditingController();
+  int _value = 1;
   @override
   Widget build(BuildContext context) {
-    // final logo = Hero(
-    //   tag: 'hero',
-    //   child: Image(
-    //       image: AssetImage('assets/Logo.png'),
-    //       alignment: Alignment.center,
-    //       width: 100,
-    //       height: 100),
-    // );
-
-    final pengirimanuntuknama = TextFormField(
-      controller: emailC,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      // initialValue: 'aldinurhanudin08@gmail.com',
-      decoration: InputDecoration(
-        hintText: 'Pengiriman Untuk nama',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0),
-          borderSide:
-              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
-        ),
-        prefixIcon: Icon(Icons.email),
-      ),
-    );
-
-    final nohp = TextFormField(
-      controller: emailC,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      // initialValue: 'aldinurhanudin08@gmail.com',
-      decoration: InputDecoration(
-        hintText: 'No Hp',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0),
-          borderSide:
-              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
-        ),
-        prefixIcon: Icon(Icons.phone),
-      ),
-    );
-    final alamat = TextFormField(
-      controller: emailC,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      // initialValue: 'aldinurhanudin08@gmail.com',
-      decoration: InputDecoration(
-        hintText: 'Alamat',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0),
-          borderSide:
-              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
-        ),
-        prefixIcon: Icon(Icons.email),
-      ),
-    );
-    final catatan = TextFormField(
-      controller: emailC,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      // initialValue: 'aldinurhanudin08@gmail.com',
-      decoration: InputDecoration(
-        hintText: 'Catatan',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0),
-          borderSide:
-              BorderSide(color: Color.fromARGB(255, 223, 0, 0), width: 200),
-        ),
-        prefixIcon: Icon(Icons.email),
-      ),
-    );
-
-    final registerButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        onPressed: () {
-          print("LOGIN DENGAN : EMAIL(${emailC.text}) & PASS(${passC.text})");
-          Navigator.of(context).pushNamed(LoginPage.tag);
-        },
-        padding: EdgeInsets.all(12),
-        color: Color.fromARGB(255, 10, 160, 22),
-        child: Text('Buat Pesanan',
-            style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
-      ),
-    );
-
-    // final forgotLabel = FlatButton(
-    //   child: Text(
-    //     'Lupa password?',
-    //     style: TextStyle(color: Colors.black54),
-    //   ),
-    //   onPressed: () {
-    //     Navigator.of(context).pushNamed(LoginPage.tag);
-    //   },
-    // );
-
-    final daftar = Center(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('Sudah punya akun?'),
-        FlatButton(
-          child: Text(
-            'Masuk Sekarang',
-            style: TextStyle(color: Color.fromARGB(255, 10, 160, 22)),
-          ),
-          onPressed: () {
-            Navigator.of(context).pushNamed(LoginPage.tag);
-          },
-        ),
-      ],
-    ));
-
+    final TextEditingController emailControlller = TextEditingController();
+    final TextEditingController nameControlller = TextEditingController();
+    final TextEditingController addressControlller = TextEditingController();
+    final TextEditingController cityControlller = TextEditingController();
+    final TextEditingController countryControlller = TextEditingController();
+    final TextEditingController zipCodeControlller = TextEditingController();
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        color: Colors.green,
-        child: Center(
-          child: Container(
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: Container(
+            alignment: Alignment.center,
+            height: 40.0,
+            width: 150,
+            color: Colors.green,
+            child: Text(
+              "Checkout",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
             ),
-            // color: Colors.white,
-            child: ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.only(left: 24.0, right: 24.0),
-              children: <Widget>[
-                // Container(
-                //     margin: EdgeInsets.only(top: 40, left: 40), child: logo),
-                pengirimanuntuknama,
-                SizedBox(height: 8.0),
-                nohp,
-                SizedBox(height: 8.0),
-                alamat,
-                SizedBox(height: 24.0),
-                catatan,
-                SizedBox(height: 8.0),
-                registerButton,
-                // forgotLabel,
-                daftar
+          )),
+      bottomNavigationBar: Container(
+        width: double.infinity,
+        height: 80,
+        color: Colors.green,
+        child: TextButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(HomePage.tag);
+          },
+          child: Container(
+              alignment: Alignment.center,
+              width: 150,
+              height: 50,
+              padding: EdgeInsets.all(10),
+              color: Colors.white,
+              child: Text("Buat Pesanan",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold))),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Informasi Pelanggan',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            _buildTextFormField(emailControlller, context, 'Email'),
+            _buildTextFormField(nameControlller, context, 'Nama'),
+            Text(
+              'INFORMASI PEMBAYARAN',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            _buildTextFormField(emailControlller, context, 'Alamat'),
+            _buildTextFormField(emailControlller, context, 'Kota'),
+            _buildTextFormField(emailControlller, context, 'Kode Pos'),
+            Text(
+              'Metode Pembayaran',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            Row(
+              children: [
+                Radio(
+                  value: 1,
+                  groupValue: _value,
+                  onChanged: (value) {
+                    setState(() {
+                      _value = _value;
+                    });
+                  },
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text("Tranfer bank"),
               ],
             ),
-          ),
+            Row(
+              children: [
+                Radio(
+                  value: 2,
+                  groupValue: _value,
+                  onChanged: (value) {
+                    setState(() {
+                      _value = _value;
+                    });
+                  },
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text("Bayar ditempat"),
+              ],
+            ),
+            Text(
+              'RINGKASAN PESANAN',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'SUBTOTAL',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '\Rp.10000.00',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'ONGKIR',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '\Rp.10000.00',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  all() {}
+  Padding _buildTextFormField(
+    TextEditingController controller,
+    BuildContext context,
+    String labelText,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 75,
+            child:
+                Text(labelText, style: Theme.of(context).textTheme.bodyText1),
+          ),
+          Expanded(
+            child: TextFormField(
+              controller: controller,
+              decoration: InputDecoration(
+                isDense: true,
+                contentPadding: const EdgeInsets.only(left: 10),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
