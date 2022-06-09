@@ -19,14 +19,26 @@ class Address extends StatefulWidget {
 }
 
 class _AddressState extends State<Address> {
-  final String url = "http://192.168.43.89:8000/api/address";
+  //final String url = "http://192.168.254.95:8000/api/address/";
 
   // final String url = "http://10.0.2.2:8000/api/address";
 
   // final String url = "http://192.168.43.89:8000/api/address/update/{id}";
+  String? token = null;
+  // void getDataPref() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     token = pref.getString("login");
+  //   });
+  // }
 
-  Future getAlamat() async {
-    var response = await http.get(Uri.parse(url));
+  Future<List<dynamic>> getAlamat() async {
+    // SharedPreferences pref = await SharedPreferences.getInstance();
+    // setState(() {
+    //   token = pref.getString("login");
+    // });
+    var response = await http
+        .get(Uri.parse("http://192.168.254.95:8000/api/produk/"));
     print(json.decode(response.body));
     return json.decode(response.body);
   }
@@ -68,94 +80,12 @@ class _AddressState extends State<Address> {
 
         body: FutureBuilder(
           future: getAlamat(),
-          builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
                   itemCount: snapshot.data['data'].length,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          // height: 50,
-                          color: Colors.white,
-                          padding:
-                              EdgeInsets.only(left: 10, top: 10, bottom: 10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                // 'ICA NATASYA',
-                                snapshot.data['data'][index]['name'],
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                // '(+62) 895-3333-22573',
-                                snapshot.data['data'][index]['phone_number'],
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              // Text(
-                              //   'Lor, Blok jelawe, RT.05/RW.03, Desa Karangsari, Weru (Jelawe Lor)',
-                              //   style: TextStyle(fontSize: 12),
-                              // ),
-                              Text(
-                                // 'WERU,KAB. CIREBON, JAWA BARAT, ID 45154',
-                                // style: TextStyle(fontSize: 12),
-                                snapshot.data['data'][index]['address'],
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(left: 350),
-
-                                child: IconButton(
-                                    icon: Icon(Icons.location_on_outlined),
-                                    onPressed: () {
-                                      Navigator.of(context)
-                                          .pushNamed(EditAddress.tag);
-                                    }),
-                                //Icon(Icons.location_on_outlined)
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        // Container(
-                        //     width: MediaQuery.of(context).size.width,
-                        //     height: 40,
-                        //     color: Colors.white,
-                        //     padding: EdgeInsets.all(10),
-                        //     child: FlatButton(
-                        //       onPressed: () {
-                        //         print('OK');
-                        //       },
-                        // child: Row(
-                        //   mainAxisAlignment:
-                        //       MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     Text("Tambah Alamat"),
-
-                        //     Container(
-                        //       margin: EdgeInsets.only(left: 100),
-                        //       child: IconButton(
-                        //           icon: Icon(Icons.add),
-                        //           onPressed: () {
-                        //             // Navigator.of(context).pushNamed(CreatePage.tag);
-                        //             Navigator.of(context)
-                        //                 .pushNamed(AlamatBaru.tag);
-                        //           }),
-                        //     ),
-
-                        //     // Icon(Icons.add),
-                        //   ],
-                        // ),
-                        // )),
-                      ],
-                    );
+                    return Column();
                   });
             } else {
               return Text('Data Eror');
