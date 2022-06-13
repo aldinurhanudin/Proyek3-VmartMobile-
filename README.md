@@ -39,8 +39,8 @@ https://github.com/aldinurhanudin/Vmart_API
 
 
 ## UML Class Diagram 
+
+<b>berikut class DIagram yang sudah kami buat</b>
 <br>
-berikut class DIagram yang sudah kami buat
-<br>
-![diagram class-Page-1](https://user-images.githubusercontent.com/79299597/173401387-949519a0-4600-409b-8c6b-e09e55639c9f.jpg)
+<img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/diagram.jpg" >
 
