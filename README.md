@@ -30,7 +30,7 @@ https://github.com/aldinurhanudin/Vmart_API
 <br>
 
 ## 3. UI Flutter
-<img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/favorite.jpg" height="300" width="300">
+<img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/favorite.jpg" height="300" width="150">
 ![register](https://user-images.githubusercontent.com/79299597/173387464-6a4cb91f-a890-4b51-98ee-bd6804182851.jpg)
 
 ![login](https://user-images.githubusercontent.com/79299597/173387175-4652d663-b6df-44d0-a66b-6840708bec4c.jpg)
