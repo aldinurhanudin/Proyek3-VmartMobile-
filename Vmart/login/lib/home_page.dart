@@ -19,8 +19,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   final String url = "http://192.168.254.95:8000/api/produk";
-  // final String url = "http://10.0.2.2:8000/api/produk";
+  //final String url = "http://192.168.254.95:8000/api/produk";
+  final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
   Future getProducts() async {
     var response = await http.get(Uri.parse(url));
     print(json.decode(response.body));
@@ -420,9 +420,10 @@ class _HomePageState extends State<HomePage> {
                                   // gambar: 'http://10.0.2.2:8000/storage/' +
                                   //     snapshot.data['data'][index]
                                   //         ['picture_name'],
-                                  gambar: 'http://10.0.2.2:8000/storage/' +
-                                      snapshot.data['data'][index]
-                                          ['picture_name'],
+                                  gambar:
+                                      'https://vmart.proyek.ti.polindra.ac.id/public/storage/' +
+                                          snapshot.data['data'][index]
+                                              ['picture_name'],
                                   nama: snapshot.data['data'][index]['name'],
                                   harga: snapshot.data['data'][index]['price'],
                                 ),
@@ -525,9 +526,10 @@ class _HomePageState extends State<HomePage> {
                                               )));
                                 },
                                 child: CardSayur(
-                                  gambar: 'http://10.0.2.2:8000/storage/' +
-                                      snapshot.data['data'][index]
-                                          ['picture_name'],
+                                  gambar:
+                                      'https://vmart.proyek.ti.polindra.ac.id/public/storage/' +
+                                          snapshot.data['data'][index]
+                                              ['picture_name'],
                                   nama: snapshot.data['data'][index]['name'],
                                   harga: snapshot.data['data'][index]['price'],
                                 ),
