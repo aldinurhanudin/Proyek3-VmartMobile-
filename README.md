@@ -22,8 +22,10 @@ https://github.com/aldinurhanudin/Vmart_API
 
 
 <br>
-## UML Class Diagram <br>
-![diagram class-Page-1](https://user-images.githubusercontent.com/79299597/173400745-ee752875-0b58-45e6-9708-0c8e0af0d1c8.jpg)
+## UML Class Diagram 
+berikut class DIagram yang sudah kami buat
+<br>
+![diagram class-Page-1](https://user-images.githubusercontent.com/79299597/173401387-949519a0-4600-409b-8c6b-e09e55639c9f.jpg)
 
 
 <br>
