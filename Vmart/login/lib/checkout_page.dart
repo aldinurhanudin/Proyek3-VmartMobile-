@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login/menu.dart';
+import 'package:login/product_detail.dart';
 import 'home_page.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class CheckoutPage extends StatefulWidget {
   static String tag = 'Checkoutpage';
@@ -11,8 +14,49 @@ class CheckoutPage extends StatefulWidget {
 
 class _CheckoutPageState extends State<CheckoutPage> {
   int _value = 1;
+  TextEditingController emailC = TextEditingController();
+  TextEditingController nameC = TextEditingController();
+  TextEditingController adressC = TextEditingController();
+  TextEditingController cityC = TextEditingController();
+  TextEditingController countryC = TextEditingController();
+  TextEditingController zipcodeC = TextEditingController();
+
+  void register() async {
+    var response = await http.post(
+        // Uri.parse("http://192.168.254.95:8000/api/register"),
+
+        Uri.parse("http://10.0.2.2:8000/api/register"),
+        body: ({
+          "email": emailC.text,
+          // "password": passC.text,
+          // "username": usernameC.text,
+          // "phone_number": nohpC.text,
+          // "address": alamatC.text
+        }));
+
+    if (response.statusCode == 200) {
+      final body = json.decode(response.body);
+
+      // rutePage(body["berhasil"]);
+      print("berhasil");
+    } else {
+      print("Gagal");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    double total = 0;
+    double jumlah = 10000;
+    double hasil = 0;
+    for (int i = 0; i < dataKeranjang.length; i++) {
+      print("data ${dataKeranjang[i]['price']}");
+
+      setState(() {
+        total += double.parse(dataKeranjang[i]['price']);
+        hasil = jumlah + total;
+      });
+    }
     final TextEditingController emailControlller = TextEditingController();
     final TextEditingController nameControlller = TextEditingController();
     final TextEditingController addressControlller = TextEditingController();
@@ -78,9 +122,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),
-            _buildTextFormField(emailControlller, context, 'Alamat'),
-            _buildTextFormField(emailControlller, context, 'Kota'),
-            _buildTextFormField(emailControlller, context, 'Kode Pos'),
+            _buildTextFormField(addressControlller, context, 'Alamat'),
+            _buildTextFormField(cityControlller, context, 'Kota'),
+            _buildTextFormField(zipCodeControlller, context, 'Kode Pos'),
             Text(
               'Metode Pembayaran',
               style: TextStyle(
@@ -146,13 +190,21 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    '\Rp.10000.00',
+                    'Rp' + total.toString(),
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  // Text(
+                  //   '\Rp.10000.00',
+                  //   style: TextStyle(
+                  //     color: Colors.black,
+                  //     fontSize: 15.0,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -210,9 +262,14 @@ class _CheckoutPageState extends State<CheckoutPage> {
                               .headline6!
                               .copyWith(color: Colors.white),
                         ),
-                        // Text(
-                        //   'ST'
-                        // ),
+                        Text(
+                          'Rp' + hasil.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                   ),

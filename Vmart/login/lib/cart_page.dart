@@ -181,7 +181,7 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                     icon: Icon(Icons.add),
                   ),
                   IconButton(
-                    onPressed: add,
+                    onPressed: delete,
                     icon: Icon(Icons.delete),
                   ),
                 ])
@@ -208,6 +208,22 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
       count -= 1;
       // int.parse(widget.harga!) * count;
     });
+  }
+
+  void delete() {
+    setState(() => dataKeranjang.remove);
+    // removeCompany(index) {
+    //   setState(() {
+    //     dataKeranjang.removeAt(index);
+    //   });
+    // }
+    // if (count <= 0) {
+    //   setState(() => count = 0);
+    // }
+    // setState(() {
+    //   count == 1;
+    //   // int.parse(widget.harga!) * count;
+    // });
   }
 
   // String sumPrice() {
