@@ -64,7 +64,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         setState(() {
                           dataKeranjang.add({
                             "name": widget.product['name'],
-                            "price": widget.product['price'],
+                            "price": int.parse(widget.product['price']),
                             "image": widget.product['picture_name']
                           });
                         });

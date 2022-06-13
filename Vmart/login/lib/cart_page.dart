@@ -19,6 +19,14 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+    double total = 0;
+    for (int i = 0; i < dataKeranjang.length; i++) {
+      print("data ${dataKeranjang[i]['price']}");
+
+      setState(() {
+        total += double.parse(dataKeranjang[i]['price']);
+      });
+    }
     // currentUser.cart.forEach((Cart cart)=> productPrice += cart.quantity*cart.chair.price);
     return Scaffold(
       appBar: AppBar(
@@ -55,7 +63,7 @@ class _CartPageState extends State<CartPage> {
                           fontSize: 15.0, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '\Rp.10000.00',
+                      'Rp' + total.toString(),
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 15.0,
@@ -173,7 +181,7 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                     icon: Icon(Icons.add),
                   ),
                   IconButton(
-                    onPressed: add,
+                    onPressed: delete,
                     icon: Icon(Icons.delete),
                   ),
                 ])
@@ -200,6 +208,22 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
       count -= 1;
       // int.parse(widget.harga!) * count;
     });
+  }
+
+  void delete() {
+    setState(() => dataKeranjang.remove);
+    // removeCompany(index) {
+    //   setState(() {
+    //     dataKeranjang.removeAt(index);
+    //   });
+    // }
+    // if (count <= 0) {
+    //   setState(() => count = 0);
+    // }
+    // setState(() {
+    //   count == 1;
+    //   // int.parse(widget.harga!) * count;
+    // });
   }
 
   // String sumPrice() {
