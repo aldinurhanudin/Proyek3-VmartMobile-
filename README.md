@@ -22,13 +22,9 @@ https://github.com/aldinurhanudin/Vmart_API
 
 
 <br>
-## UML Class Diagram 
-berikut class DIagram yang sudah kami buat
-<br>
-![diagram class-Page-1](https://user-images.githubusercontent.com/79299597/173401387-949519a0-4600-409b-8c6b-e09e55639c9f.jpg)
 
 
-<br>
+
 
 
 
@@ -42,6 +38,9 @@ berikut class DIagram yang sudah kami buat
 <br>
 
 
+## UML Class Diagram 
 <br>
-
+berikut class DIagram yang sudah kami buat
+<br>
+![diagram class-Page-1](https://user-images.githubusercontent.com/79299597/173401387-949519a0-4600-409b-8c6b-e09e55639c9f.jpg)
 
