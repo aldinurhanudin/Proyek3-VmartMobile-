@@ -47,4 +47,20 @@ https://github.com/aldinurhanudin/Vmart_API
 <b>berikut class DIagram yang sudah kami buat</b>
 <br>
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/diagram.jpg" >
-
+<br>
+## CRUD
+<b>login</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
+<br>
+<b>register</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/register_page.dart
+<br>
+<b>produk</b>
+<br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/allproduct_page.dart
+<br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/product_detail.dart
+<br>
+<b>checkout</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/checkout_page.dart
+<br>
