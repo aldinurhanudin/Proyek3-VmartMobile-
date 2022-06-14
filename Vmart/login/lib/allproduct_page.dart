@@ -18,8 +18,12 @@ class AllproductPage extends StatefulWidget {
 }
 
 class _AllproductPageState extends State<AllproductPage> {
+<<<<<<< HEAD
   // final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
   final String url = "http://10.0.2.2:8000/api/produk";
+=======
+  final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
+>>>>>>> 9961b839487701628b575714c44b4398f1379388
   @override
   initState() {
     super.initState();
@@ -33,10 +37,14 @@ class _AllproductPageState extends State<AllproductPage> {
   }
 
   Future deleteProduct(String productId) async {
+<<<<<<< HEAD
     // String url =
     //     "https://vmart.proyek.ti.polindra.ac.id/public/api/produk/" + productId;
     String url =
         "http://10.0.2.2:8000/api/produk/" + productId;
+=======
+    String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk/" + productId;
+>>>>>>> 9961b839487701628b575714c44b4398f1379388
 
     var response = await http.delete(Uri.parse(url));
     return json.decode(response.body);
@@ -94,8 +102,13 @@ class _AllproductPageState extends State<AllproductPage> {
                                     width: 100,
                                     child: Image(
                                         image: NetworkImage(
+<<<<<<< HEAD
                                             // "https://vmart.proyek.ti.polindra.ac.id/public/storage/${snapshot.data['data'][index]['picture_name']}"
                                             "http://10.0.2.2:8000/storage/image/${snapshot.data['data'][index]['picture_name']}",
+=======
+                                            "https://vmart.proyek.ti.polindra.ac.id/public/storage/${snapshot.data['data'][index]['picture_name']}"
+                                            // "http://10.0.2.2:8000/storage/image/${snapshot.data['data'][index]['picture_name']}",
+>>>>>>> 9961b839487701628b575714c44b4398f1379388
                                             ))),
                               ),
                               Expanded(

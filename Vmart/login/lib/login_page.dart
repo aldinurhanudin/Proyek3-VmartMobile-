@@ -21,9 +21,17 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passC = TextEditingController();
 
   void sign_in() async {
+<<<<<<< HEAD
     var response = await http.post(
         Uri.parse("http://10.0.2.2:8000/api/sign_in"),
         body: ({"email": emailC.text, "password": passC.text}));
+=======
+    var response =
+        await http.post(Uri.parse("https://vmart.proyek.ti.polindra.ac.id/public/api/sign_in"),
+
+            // Uri.parse("http://10.0.2.2:8000/api/sign_in"),
+            body: ({"email": emailC.text, "password": passC.text}));
+>>>>>>> 9961b839487701628b575714c44b4398f1379388
 
     if (response.statusCode == 200) {
       final body = json.decode(response.body);

@@ -19,8 +19,12 @@ class Address extends StatefulWidget {
 }
 
 class _AddressState extends State<Address> {
+<<<<<<< HEAD
   // final String url =
   //     "https://vmart.proyek.ti.polindra.ac.id/public/api/address/";
+=======
+  final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/address/";
+>>>>>>> 9961b839487701628b575714c44b4398f1379388
 
   final String url = "http://10.0.2.2:8000/api/address";
 
