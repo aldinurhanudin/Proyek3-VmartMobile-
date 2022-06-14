@@ -24,7 +24,7 @@ class _ProductDetailState extends State<ProductDetail> {
       body: Column(
         children: [
           Container(
-            child: Image.network('https://vmart.proyek.ti.polindra.ac.id/public/storage/' +
+            child: Image.network('https://vmart.proyek.ti.polindra.ac.id/storage/app/public/' +
                 widget.product['picture_name']),
           ),
           SizedBox(

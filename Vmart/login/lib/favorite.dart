@@ -3,7 +3,7 @@ import 'package:login/product_detail.dart';
 
 class Favorite extends StatefulWidget {
   static String tag = 'Favorite';
-  const Favorite({ Key? key }) : super(key: key);
+  const Favorite({Key? key}) : super(key: key);
 
   @override
   State<Favorite> createState() => _FavoriteState();
@@ -75,7 +75,8 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
-                          'https://vmart.proyek.ti.polindra.ac.id/public/storage/' + widget.gambar!)),
+                          'https://vmart.proyek.ti.polindra.ac.id/storage/app/public/' +
+                              widget.gambar!)),
                 )),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +110,7 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
   //     count += 1;
   //   });
   //   // int.parse(widget.harga!) * count;
-  }
+}
 
   // void min() {
   //   if (count <= 1) {

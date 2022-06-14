@@ -160,7 +160,7 @@ class _ItemKeranjangState extends State<ItemKeranjang> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
-                          'http://10.0.2.2:8000/storage/' + widget.gambar!)),
+                          'https://vmart.proyek.ti.polindra.ac.id/storage/app/public/' + widget.gambar!)),
                 )),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

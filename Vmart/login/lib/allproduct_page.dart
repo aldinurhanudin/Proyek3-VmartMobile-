@@ -18,8 +18,8 @@ class AllproductPage extends StatefulWidget {
 }
 
 class _AllproductPageState extends State<AllproductPage> {
-  // final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
-  final String url = "http://10.0.2.2:8000/api/produk";
+  final String url = "https://vmart.proyek.ti.polindra.ac.id/api/produk";
+  //final String url = "http://10.0.2.2:8000/api/produk";
   @override
   initState() {
     super.initState();
@@ -33,10 +33,10 @@ class _AllproductPageState extends State<AllproductPage> {
   }
 
   Future deleteProduct(String productId) async {
-    // String url =
-    //     "https://vmart.proyek.ti.polindra.ac.id/public/api/produk/" + productId;
     String url =
-        "http://10.0.2.2:8000/api/produk/" + productId;
+        "https://vmart.proyek.ti.polindra.ac.id/api/produk/" + productId;
+    // String url =
+    //     "http://10.0.2.2:8000/api/produk/" + productId;
 
     var response = await http.delete(Uri.parse(url));
     return json.decode(response.body);
@@ -94,8 +94,8 @@ class _AllproductPageState extends State<AllproductPage> {
                                     width: 100,
                                     child: Image(
                                         image: NetworkImage(
-                                            // "https://vmart.proyek.ti.polindra.ac.id/public/storage/${snapshot.data['data'][index]['picture_name']}"
-                                            "http://10.0.2.2:8000/storage/image/${snapshot.data['data'][index]['picture_name']}",
+                                            "https://vmart.proyek.ti.polindra.ac.id/storage/app/public/${snapshot.data['data'][index]['picture_name']}"
+                                            // "http://10.0.2.2:8000/storage/image/${snapshot.data['data'][index]['picture_name']}",
                                             ))),
                               ),
                               Expanded(
