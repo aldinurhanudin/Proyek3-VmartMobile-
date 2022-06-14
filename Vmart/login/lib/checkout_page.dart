@@ -4,6 +4,7 @@ import 'package:login/product_detail.dart';
 import 'home_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:cool_alert/cool_alert.dart';
 
 class CheckoutPage extends StatefulWidget {
   static String tag = 'Checkoutpage';
@@ -269,7 +270,17 @@ class _CheckoutPageState extends State<CheckoutPage> {
         color: Colors.green,
         child: TextButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(Menu.tag);
+            CoolAlert.show(
+              context: context,
+              type: CoolAlertType.success,
+              text: "Your transaction was successful!",
+              onConfirmBtnTap: () => Navigator.of(context).pushNamed(Menu.tag),
+             
+            );
+            // onConfirmBtnTap:
+            // () => Navigator.of(context).pushNamed(Menu.tag);
+            // Navigator.of(context).pushNamed(Menu.tag);
+            // () => Navigator.pop(context).pushNamed(Menu.tag);
           },
           child: Container(
               alignment: Alignment.center,
