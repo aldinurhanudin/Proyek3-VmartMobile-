@@ -67,3 +67,14 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <br>
 <b>alamat</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/address.dart
+<br>
+## Shared Preferences
+<b>login</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
+<br>
+<b>profile</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/profile/components/body.dart
+<br>
+<b>profile</b><br>
+https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/splash_page.dart
+<br>
