@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/checkout_page.dart';
 import 'package:login/favorite.dart';
 
 import 'cart_page.dart';
@@ -24,8 +25,9 @@ class _ProductDetailState extends State<ProductDetail> {
       body: Column(
         children: [
           Container(
-            child: Image.network('https://vmart.proyek.ti.polindra.ac.id/storage/app/public/' +
-                widget.product['picture_name']),
+            child: Image.network(
+                'https://vmart.proyek.ti.polindra.ac.id/storage/app/public/' +
+                    widget.product['picture_name']),
           ),
           SizedBox(
             height: 20,
@@ -87,25 +89,46 @@ class _ProductDetailState extends State<ProductDetail> {
             // margin: EdgeInsets.only(right: 9, left: 9),
             margin: EdgeInsets.only(top: 9),
             padding: EdgeInsets.only(right: 9, left: 9),
-            decoration: BoxDecoration(
+
+            // decoration: BoxDecoration(
+            //   color: Theme.of(context).primaryColor,
+            //   borderRadius: BorderRadius.circular(10.0),
+
+            //   // boxShadow: [
+            //   //   // BoxShadow(
+            //   //   //   color: Colors.black,
+            //   //   //   offset: Offset(0, 2),
+            //   //   //   // blurRadius: 30.0,
+            //   //   // )
+            //   // ]
+            // ),
+            // child: Center(
+            //   child: Text(
+            //     'Beli Sekarang',
+            //     textAlign: TextAlign.center,
+            //     style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.white,
+            //         fontSize: 18.0),
+            //   ),
+            // ),
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18),
+              ),
               color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(10.0),
-              // boxShadow: [
-              //   // BoxShadow(
-              //   //   color: Colors.black,
-              //   //   offset: Offset(0, 2),
-              //   //   // blurRadius: 30.0,
-              //   // )
-              // ]
-            ),
-            child: Center(
-              child: Text(
-                'Beli Sekarang',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 18.0),
+              onPressed: () {
+                Navigator.of(context).pushNamed(CheckoutPage.tag);
+              },
+              child: Center(
+                child: Text(
+                  'Beli Sekarang',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 18.0),
+                ),
               ),
             ),
           )
