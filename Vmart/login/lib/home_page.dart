@@ -19,8 +19,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //  final String url = "http://192.168.254.95:8000/api/produk";
-  final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
+  //final String url = "http://192.168.254.95:8000/api/produk";
+  final String url = "http://10.0.2.2:8000/api/produk";
+  // final String url = "https://vmart.proyek.ti.polindra.ac.id/public/api/produk";
+
   Future getProducts() async {
     var response = await http.get(Uri.parse(url));
     print(json.decode(response.body));
