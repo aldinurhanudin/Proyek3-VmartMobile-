@@ -79,6 +79,190 @@ class _CheckoutPageState extends State<CheckoutPage> {
               style: TextStyle(color: Colors.white),
             ),
           )),
+      body: SafeArea(
+          child: Container(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Informasi Pelanggan',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                _buildTextFormField(emailControlller, context, 'Email'),
+                _buildTextFormField(nameControlller, context, 'Nama'),
+                Text(
+                  'INFORMASI PEMBAYARAN',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+                _buildTextFormField(addressControlller, context, 'Alamat'),
+                _buildTextFormField(cityControlller, context, 'Kota'),
+                _buildTextFormField(zipCodeControlller, context, 'Kode Pos'),
+                Text(
+                  'Metode Pembayaran',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 1,
+                      groupValue: _value,
+                      onChanged: (value) {
+                        setState(() {
+                          _value = _value;
+                        });
+                      },
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Text("Bayar ditempat"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 2,
+                      groupValue: _value,
+                      onChanged: (value) {
+                        setState(() {
+                          _value = _value;
+                        });
+                      },
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Text("Tranfer bank"),
+                  ],
+                ),
+                Text(
+                  'RINGKASAN PESANAN',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                Divider(
+                  thickness: 2,
+                  color: Colors.black,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'SUBTOTAL',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'Rp' + total.toString(),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      // Text(
+                      //   '\Rp.10000.00',
+                      //   style: TextStyle(
+                      //     color: Colors.black,
+                      //     fontSize: 15.0,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'ONGKIR',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '\Rp.10000.00',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 60,
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withAlpha(50),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(5.0),
+                      width: MediaQuery.of(context).size.width - 10,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'TOTAL',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6!
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              'Rp' + hasil.toString(),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      )),
       bottomNavigationBar: Container(
         width: double.infinity,
         height: 80,
@@ -98,185 +282,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       color: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.bold))),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Informasi Pelanggan',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            _buildTextFormField(emailControlller, context, 'Email'),
-            _buildTextFormField(nameControlller, context, 'Nama'),
-            Text(
-              'INFORMASI PEMBAYARAN',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-            ),
-            _buildTextFormField(addressControlller, context, 'Alamat'),
-            _buildTextFormField(cityControlller, context, 'Kota'),
-            _buildTextFormField(zipCodeControlller, context, 'Kode Pos'),
-            Text(
-              'Metode Pembayaran',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                Radio(
-                  value: 1,
-                  groupValue: _value,
-                  onChanged: (value) {
-                    setState(() {
-                      _value = _value;
-                    });
-                  },
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text("Bayar ditempat"),
-              ],
-            ),
-            Row(
-              children: [
-                Radio(
-                  value: 2,
-                  groupValue: _value,
-                  onChanged: (value) {
-                    setState(() {
-                      _value = _value;
-                    });
-                  },
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text("Tranfer bank"),
-              ],
-            ),
-            Text(
-              'RINGKASAN PESANAN',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            Divider(
-              thickness: 2,
-              color: Colors.black,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'SUBTOTAL',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Rp' + total.toString(),
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  // Text(
-                  //   '\Rp.10000.00',
-                  //   style: TextStyle(
-                  //     color: Colors.black,
-                  //     fontSize: 15.0,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'ONGKIR',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '\Rp.10000.00',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 60,
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withAlpha(50),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(5.0),
-                  width: MediaQuery.of(context).size.width - 10,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'TOTAL',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline6!
-                              .copyWith(color: Colors.white),
-                        ),
-                        Text(
-                          'Rp' + hasil.toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
         ),
       ),
     );
