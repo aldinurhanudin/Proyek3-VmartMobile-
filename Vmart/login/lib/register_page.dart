@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
     var response = await http.post(
         // Uri.parse("http://192.168.254.95:8000/api/register"),
 
-        Uri.parse("http://10.0.2.2:8000/api/register"),
+        Uri.parse("https://vmart.proyek.ti.polindra.ac.id/public/api/register"),
         body: ({
           "email": emailC.text,
           "password": passC.text,

@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void sign_in() async {
     var response = await http.post(
-        // Uri.parse("http://192.168.225.95:8000/api/sign_in"),
+        //Uri.parse("https://vmart.proyek.ti.polindra.ac.id/public/api/sign_in"),
 
         Uri.parse("http://10.0.2.2:8000/api/sign_in"),
         body: ({"email": emailC.text, "password": passC.text}));
