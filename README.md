@@ -40,6 +40,7 @@ https://github.com/aldinurhanudin/Vmart_API
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/getstarted.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/register.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/alamat.jpeg" height="300" width="150">
+<img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/alert.png" height="300" width="150">
 <br>
 
 
