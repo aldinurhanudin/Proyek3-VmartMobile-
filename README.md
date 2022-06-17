@@ -73,8 +73,9 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <br>
 
 ## SOLID
+berikut diagram <b>Single Responsibility Principle (SRP)</b> yang dimana Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tanggung jawab
 ![solid-profile](https://user-images.githubusercontent.com/79299597/174068520-f1e6a2c8-6667-4574-8b22-b3db45b0b9ab.jpg)
-
+kode program = https://github.com/aldinurhanudin/Proyek3-VmartMobile-/tree/main/Vmart/login/lib/profile
 ## Shared Preferences
 <b>login</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
