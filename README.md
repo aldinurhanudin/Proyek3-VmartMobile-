@@ -18,7 +18,7 @@
 ## API
 link github di bawah berisikan API
 <br>
-https://github.com/aldinurhanudin/Vmart_API
+https://github.com/aldinurhanudin/Vmart_API/tree/master/web_vmart/app/Http/Controllers/API
 
 
 <br>
