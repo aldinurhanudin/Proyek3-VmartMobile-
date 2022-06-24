@@ -29,7 +29,8 @@ https://github.com/aldinurhanudin/Vmart_API/tree/master/web_vmart/app/Http/Contr
 
 
 ## UI Flutter
-berikut tampilan atau UI dari aplikasi yang sudah kami buat
+<b>berikut tampilan atau UI dari aplikasi yang sudah kami buat</b>
+<br>
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/splashpage.png" height="300" width="150"><img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/getstarted.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/login.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/register.jpg" height="300" width="150">
