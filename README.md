@@ -100,4 +100,5 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <br>
 
 ## FIREBASE NOTIFICATION
+  akan muncul notifikasi aplikasi vmart ketika produk sedang dalam proses pengiriman<br> 
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/firebase notif.png" height="400" width="200">
