@@ -79,7 +79,7 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <b>berikut diagram <b>Single Responsibility Principle (SRP)</b> yang dimana Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tanggung jawab</b><br>
 ### penjelasan
 class diagram di bawah merupakan contoh dari SRP yang dimana profilMenu hanya bertugas untuk membuat menu yang ada di profile, frofilepic bertugas untuk mengatur tampilan foto yang ada di profile, body bertugas untuk mengatur kerangka profile, dan profileScreen bertugas untuk menampilan tampian profile. 
-dari penjelasan di atas bahwasannya stiap kelas memiliki tanggung jawab, dan hanya memiliki satu tanggung jawab
+<br> dari penjelasan di atas bahwasannya stiap kelas memiliki tanggung jawab, dan hanya memiliki satu tanggung jawab
 <br>
 ![solid-profile](https://user-images.githubusercontent.com/79299597/174068520-f1e6a2c8-6667-4574-8b22-b3db45b0b9ab.jpg)
 <br>
