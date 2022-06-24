@@ -98,3 +98,6 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <b>Splash</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/splash_page.dart
 <br>
+
+## FIREBASE NOTIFICATION
+<img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/firebase notif.png" height="300" width="150">
