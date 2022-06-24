@@ -29,6 +29,7 @@ https://github.com/aldinurhanudin/Vmart_API/tree/master/web_vmart/app/Http/Contr
 
 
 ## UI Flutter
+berikut tampilan atau UI dari aplikasi yang sudah kami buat
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/splashpage.png" height="300" width="150"><img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/getstarted.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/login.jpg" height="300" width="150">
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/register.jpg" height="300" width="150">
@@ -53,37 +54,37 @@ https://github.com/aldinurhanudin/Vmart_API/tree/master/web_vmart/app/Http/Contr
 <img src="https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/assets/diagram.jpg" >
 <br>
 ## CRUD
-<b>login</b><br>
+<b>Login</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
 <br>
-<b>register</b><br>
+<b>Register</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/register_page.dart
 <br>
-<b>produk</b>
+<b>Produk</b>
 <br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/allproduct_page.dart
 <br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/product_detail.dart
 <br>
-<b>checkout</b><br>
+<b>Checkout</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/checkout_page.dart
 <br>
-<b>alamat</b><br>
+<b>Alamat</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/address.dart
 <br>
 
 ## SOLID
-berikut diagram <b>Single Responsibility Principle (SRP)</b> yang dimana Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tanggung jawab<br>
+<b>berikut diagram <b>Single Responsibility Principle (SRP)</b> yang dimana Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tanggung jawab</b><br>
 ![solid-profile](https://user-images.githubusercontent.com/79299597/174068520-f1e6a2c8-6667-4574-8b22-b3db45b0b9ab.jpg)
 <br>
 kode program = https://github.com/aldinurhanudin/Proyek3-VmartMobile-/tree/main/Vmart/login/lib/profile
 ## Shared Preferences
-<b>login</b><br>
+<b>Login</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
 <br>
-<b>profile</b><br>
+<b>Profile</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/profile/components/body.dart
 <br>
-<b>profile</b><br>
+<b>Splash</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/splash_page.dart
 <br>
