@@ -80,6 +80,10 @@ https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib
 <br>
 kode program = https://github.com/aldinurhanudin/Proyek3-VmartMobile-/tree/main/Vmart/login/lib/profile
 ## Shared Preferences
+### penjelasan
+pertama di sini ada <b>login</b>, pada aplikasi di saat login akan menyimpan data <i>shared preference</i> yang dimana ia akan menyimpan token dari user yang login.
+ketika user menghapus jendela aplikasi user tidak akan login lagi, pada saat user membuka kembali aplikasi user akan diarahkan dari tampilan <b>splash</b> setelah itu ke tampilan home. untuk kembali ke default awal maka user perlu <i>logout</i> terlebih dahulu di halaman <b>profile<b>
+  <br>
 <b>Login</b><br>
 https://github.com/aldinurhanudin/Proyek3-VmartMobile-/blob/main/Vmart/login/lib/login_page.dart
 <br>
